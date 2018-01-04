@@ -4,7 +4,11 @@ import snw.engine.component.FrameComponent;
 import snw.engine.core.Engine;
 
 public class normalPanel extends FrameComponent{
+    public normalPanel(String name){
+        super(name,0,0, Engine.getWidth(),Engine.getHeight(),true);
+    }
+
     public normalPanel(){
-        super("default_normal",0,0, Engine.getWidth(),Engine.getHeight(),true);
+        this("Default Normal Panel");
     }
 }
