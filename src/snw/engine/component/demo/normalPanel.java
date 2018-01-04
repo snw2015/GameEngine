@@ -14,7 +14,7 @@ public class NormalPanel extends FrameComponent {
     }
 
     public void setBackground(String imageName) {
-        Graphic background = new Graphic(name + "_background", Engine.getImage(name), 0, 0, width, height);
+        Graphic background = new Graphic(name + "_background", Engine.getImage(imageName), 0, 0, width, height);
         add(background);
     }
 }
