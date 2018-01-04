@@ -54,9 +54,18 @@ public class VectorInt {
         return (inBound(bound.x, bound.y, bound.width, bound.height));
     }
 
+    /**
+     * x, y inclusive, x + width, y + height exclusive
+     *
+     * @param x
+     * @param y
+     * @param width
+     * @param height
+     * @return
+     */
     public boolean inBound(int x, int y, int width, int height) {
-        return (x <= this.x && y <= this.y && x + width >= this.x
-                && y + height >= this.y);
+        return (x <= this.x && y <= this.y && x + width > this.x
+                && y + height > this.y);
     }
 
     public double distance(VectorInt other) {

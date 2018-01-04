@@ -846,6 +846,10 @@ public final class Engine {
         threadLoop.start();
     }
 
+    public static void requestFocus() {
+        getFrame().requestFocus();
+    }
+
     public static void initialize() {
         clearEngine();
         System.setProperty("sun.java2d.opengl", "true");
@@ -856,6 +860,7 @@ public final class Engine {
         startPainting();
         setEnable(true);
         setVisible(true);
+        requestFocus();
     }
 
     public static void exit() {

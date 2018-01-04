@@ -56,7 +56,6 @@ public class EngineFrame extends JFrame {
             }
         });
         addKeyListener(new KeyListener() {
-
             @Override
             public void keyTyped(KeyEvent e) {
                 Engine.runNewThread(() -> {
@@ -164,9 +163,14 @@ public class EngineFrame extends JFrame {
         }
     }
 
+/*    @Override
+    public void requestFocus() {
+        super.requestFocus();
+        contentPanel.requestFocus();
+    }*/
+
     public void resize() {
         contentPanel.resize();
-        setPreferredSize(new Dimension(panel.getWidth(), panel.getHeight()));
         pack();
         setLocationRelativeTo(null);
     }
