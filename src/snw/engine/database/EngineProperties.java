@@ -15,8 +15,6 @@ public class EngineProperties {
         properties = new HashMap<>();
 
         clear();
-
-        readPropertiesFile();
     }
 
 
@@ -40,6 +38,7 @@ public class EngineProperties {
                 "!cursor_normal_length: 6",
                 "!cursor_drag_length  : 1",
                 "!cursor_busy_length  : 0",});
+        readPropertiesFile();
     }
 
     public String[] getAllProperties() {
@@ -182,9 +181,9 @@ public class EngineProperties {
     }
 
     public void readPropertiesFile(String fileName) {
-        String propertiesStr = Engine.readFileStr(fileName);
-        if (propertiesStr != null)
-            loadAll(propertiesStr);
+        String[] propertiesStrArr = Engine.readFileStrArr(fileName);
+        if (propertiesStrArr != null)
+            loadAll(propertiesStrArr);
     }
 
     public void savePropertiesFile() {

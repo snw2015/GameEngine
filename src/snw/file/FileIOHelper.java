@@ -1,5 +1,7 @@
 package snw.file;
 
+import snw.engine.core.Engine;
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -11,7 +13,7 @@ public class FileIOHelper {
     }
 
     public static BufferedReader getFileReader(String filePath) {
-        FileReader reader = null;
+        FileReader reader;
         File file = readFile(filePath);
         if (!file.exists()) return null;
         try {
@@ -28,10 +30,10 @@ public class FileIOHelper {
         ArrayList<String> list = new ArrayList<>();
         BufferedReader reader = getFileReader(filePath);
         if (reader == null) return null;
-
         try {
-            for (String line = reader.readLine(); line != null; line = reader.readLine()) {
+            for (String line = reader.readLine(); line != null; ) {
                 list.add(line);
+                line = reader.readLine();
             }
         } catch (IOException e) {
             //TODO
@@ -56,7 +58,7 @@ public class FileIOHelper {
         if (contents == null) return null;
 
         String content = "";
-        for (String line : readFileStrArr(filePath)) {
+        for (String line : contents) {
             content += line + "\n";
         }
         return content;
