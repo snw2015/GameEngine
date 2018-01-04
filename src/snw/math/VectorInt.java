@@ -80,6 +80,14 @@ public class VectorInt {
         return new VectorInt(rnd.nextInt(rangeX), rnd.nextInt(rangeY));
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof VectorInt) {
+            return x == ((VectorInt) obj).x && y == ((VectorInt) obj).y;
+        }
+        return super.equals(obj);
+    }
+
     public String toString() {
         return ("Vector(" + x + ", " + y + ")");
     }

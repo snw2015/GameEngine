@@ -88,7 +88,7 @@ public final class Engine {
     }
 
     public static void setSize(int width, int height) {
-        getPanel().setSize(width, height);
+        setProperty("size", width + " x " + height);
         resize();
     }
 
