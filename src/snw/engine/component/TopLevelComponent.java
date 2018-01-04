@@ -71,6 +71,10 @@ public class TopLevelComponent extends FrameComponent {
             }
         } else {
             if (hasCursor) {
+                String cursorName = getProperty("cursor_name");
+                Engine.releaseImageList(cursorName, getPropertyInt("cursor_normal_length"));
+                Engine.releaseImageList(cursorName + "_drag", getPropertyInt("cursor_drag_length"));
+                Engine.releaseImageList(cursorName + "_busy", getPropertyInt("cursor_busy_length"));
                 remove(cursor);
                 cursor = null;
                 hasCursor = false;

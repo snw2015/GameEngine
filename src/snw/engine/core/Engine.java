@@ -190,10 +190,10 @@ public final class Engine {
         return getImageBufferData().store(name);
     }
 
-    public static boolean storeImage(String... names) {
+    public static boolean storeImages(String... names) {
         boolean b = true;
         for (String name : names) {
-            b = b && storeImage(name);
+            b = storeImage(name) && b;
         }
         return b;
     }
@@ -224,10 +224,20 @@ public final class Engine {
         return getImageBufferData().release(name);
     }
 
-    public static boolean releaseImage(String... names) {
+    public static boolean releaseImages(String... names) {
         boolean b = true;
         for (String name : names) {
-            b = b && releaseImage(name);
+            b = releaseImage(name) && b;
+        }
+        return b;
+    }
+
+    public static boolean releaseImageList(String name, int num) {
+        if (num < 0) return false;
+        if (num == 1) return releaseImage(name);
+        boolean b = true;
+        for (int i = 1; i <= num; i++) {
+            b = releaseImage(name + "_" + i) && b;
         }
         return b;
     }
@@ -290,7 +300,7 @@ public final class Engine {
     public static boolean storeAudio(String... names) {
         boolean b = true;
         for (String name : names) {
-            b = b && storeAudio(name);
+            b = storeAudio(name) && b;
         }
         return b;
     }
@@ -306,7 +316,7 @@ public final class Engine {
     public static boolean releaseAudio(String... names) {
         boolean b = true;
         for (String name : names) {
-            b = b && releaseAudio(name);
+            b = releaseAudio(name) && b;
         }
         return b;
     }
@@ -691,8 +701,8 @@ public final class Engine {
         getFrame().setUndecorated(!decorated);
     }
 
-    public static void setCursor() {
-        //TODO
+    public static void setCursor(boolean hasCursor) {
+        getFrame().setCustomCursor(hasCursor);
     }
 
     public static void setVisible(boolean visible) {
@@ -712,6 +722,7 @@ public final class Engine {
         getFrame().resize();
     }
 
+
     /*
      Timer kits
      */
@@ -727,7 +738,6 @@ public final class Engine {
             e.printStackTrace();
         }
     }
-
 
     private static long tickTimer = 0;
 

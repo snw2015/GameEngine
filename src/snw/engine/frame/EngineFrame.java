@@ -17,11 +17,6 @@ public class EngineFrame extends JFrame {
     public EngineFrame() {
         add(contentPanel);
         resize();
-        //TODO
-        setCursor(getToolkit().createCustomCursor(
-                new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB), new Point(), null));
-        panel.setCursor(true);
-
         addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {
@@ -155,6 +150,17 @@ public class EngineFrame extends JFrame {
 
         public void resize() {
             this.setPreferredSize(new Dimension(panel.getWidth(), panel.getHeight()));
+        }
+    }
+
+    public void setCustomCursor(boolean isCustom) {
+        if (isCustom) {
+            setCursor(getToolkit().createCustomCursor(
+                    new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB), new Point(), null));
+            panel.setCursor(true);
+        } else {
+            setCursor(Cursor.getDefaultCursor());
+            panel.setCursor(false);
         }
     }
 
