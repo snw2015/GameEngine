@@ -32,8 +32,8 @@ public class Game {
         panel.refocusMouse();
     }
 
-    public void clear(){
-        setSize(Engine.getWidth(),Engine.getHeight());
+    public void clear() {
+        setSize(Engine.getWidth(), Engine.getHeight());
         removeAllStates();
         setLoading(null);
     }

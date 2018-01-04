@@ -365,8 +365,7 @@ public abstract class Component {
     }
 
     public void setSize(VectorInt size) {
-        setWidth(size.x);
-        setHeight(size.y);
+        setSize(size.x,size.y);
     }
 
     public VectorInt getSize() {

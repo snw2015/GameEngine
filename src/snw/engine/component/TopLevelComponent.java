@@ -10,6 +10,7 @@ public class TopLevelComponent extends FrameComponent {
     private MovingGraphic cursor;
     private int state = STATE_NORMAL;
 
+
     public static final int STATE_NORMAL = 0;
     public static final int STATE_DRAG = 1;
     public static final int STATE_BUSY = 2;
@@ -26,6 +27,34 @@ public class TopLevelComponent extends FrameComponent {
 
     public TopLevelComponent(String name, int x, int y, int width, int height, boolean focusable) {
         super(name, x, y, width, height, focusable);
+    }
+
+
+    @Override
+    public void keyTyped(char keyChar) {
+        for (Component sub : getSubs()) {
+            if (sub != cursor && sub.isEnable()) {
+                sub.keyTyped(keyChar);
+            }
+        }
+    }
+
+    @Override
+    public void keyPressed(int key) {
+        for (Component sub : getSubs()) {
+            if (sub != cursor && sub.isEnable()) {
+                sub.keyPressed(key);
+            }
+        }
+    }
+
+    @Override
+    public void keyReleased(int key) {
+        for (Component sub : getSubs()) {
+            if (sub != cursor && sub.isEnable()) {
+                sub.keyReleased(key);
+            }
+        }
     }
 
     @Override
