@@ -55,8 +55,15 @@ public class AnimationData {
     }
 
     public AnimationData(AffineTransform transformation) {
-        this.transformation = transformation;
-        setAlphaInt(255);
+        this(transformation, 255);
+    }
+
+    public AnimationData(int alpha) {
+        this(new AffineTransform(), alpha);
+    }
+
+    public AnimationData() {
+        this(255);
     }
 
     public AnimationData add(AnimationData other) {

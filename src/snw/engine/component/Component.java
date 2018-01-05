@@ -3,6 +3,7 @@ package snw.engine.component;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.NoninvertibleTransformException;
+import java.awt.image.BufferedImage;
 
 import snw.engine.animation.Animation;
 import snw.engine.animation.AnimationData;
@@ -69,7 +70,7 @@ public abstract class Component {
     }
 
     public void render(Graphics2D g, AnimationData appliedData) {
-        if(!visible) return;
+        if (!visible) return;
         AnimationData finalData = getFinalAnimationData().preAdd(appliedData);
         Rectangle bound = g.getClipBounds();
 
@@ -80,6 +81,20 @@ public abstract class Component {
         paint(g, finalData);
 
         g.setClip(bound);
+    }
+
+    public BufferedImage getComponentSnap() {
+        BufferedImage bufferedImage = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_4BYTE_ABGR);
+        Graphics2D g = (Graphics2D) bufferedImage.getGraphics();
+        paint(g, new AnimationData());
+        return bufferedImage;
+    }
+
+    public BufferedImage getComponentSnapAnimated() {
+        BufferedImage bufferedImage = new BufferedImage(getBound().x, getBound().y, BufferedImage.TYPE_4BYTE_ABGR);
+        Graphics2D g = (Graphics2D) bufferedImage.getGraphics();
+        paint(g, getFinalAnimationData());
+        return bufferedImage;
     }
 
     public abstract void paint(Graphics2D g, AnimationData appliedData);
@@ -365,7 +380,7 @@ public abstract class Component {
     }
 
     public void setSize(VectorInt size) {
-        setSize(size.x,size.y);
+        setSize(size.x, size.y);
     }
 
     public VectorInt getSize() {

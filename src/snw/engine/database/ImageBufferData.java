@@ -3,6 +3,7 @@ package snw.engine.database;
 import java.awt.Image;
 
 import snw.engine.core.Engine;
+import snw.file.FileIOHelper;
 import snw.structure.BufferData;
 
 import javax.swing.*;
@@ -41,7 +42,7 @@ public class ImageBufferData extends BufferData<Image> {
     }
 
     private Image load(String name) {
-        return (new ImageIcon(Engine.getProperty("images_path") + name + ".png").getImage());
+        return (FileIOHelper.readImage(Engine.getProperty("images_path") + name + ".png"));
     }
 
     @Override

@@ -13,6 +13,7 @@ import snw.math.VectorInt;
 
 import javax.sound.sampled.Clip;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.HashMap;
 
@@ -280,6 +281,10 @@ public final class Engine {
 
     public static void clearImageBufferData() {
         getImageBufferData().clear();
+    }
+
+    public static void saveImage(String name, BufferedImage image) {
+        FileIOHelper.writeImage(getProperty("images_path") + name + ".png", "png", image);
     }
 
 

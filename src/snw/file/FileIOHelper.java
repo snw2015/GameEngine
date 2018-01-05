@@ -1,7 +1,8 @@
 package snw.file;
 
-import snw.engine.core.Engine;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
 
@@ -108,5 +109,25 @@ public class FileIOHelper {
             return false;
         }
         return true;
+    }
+
+    public static boolean writeImage(String filePath, String formatName, BufferedImage image) {
+        try {
+            return ImageIO.write(image, formatName, new File(filePath));
+        } catch (IOException e) {
+            //TODO
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public static BufferedImage readImage(String filePath) {
+        try {
+            return ImageIO.read(new File(filePath));
+        } catch (IOException e) {
+            //TODO
+            e.printStackTrace();
+        }
+        return null;
     }
 }
