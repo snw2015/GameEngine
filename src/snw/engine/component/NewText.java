@@ -84,8 +84,8 @@ public class NewText extends Component {
                     c.setY(probe.y + lineMaxHeight);
                 }
                 bufferedChar.addAll(line);
-                if (realSize.x < probe.x - wordDistance) {
-                    realSize.x = probe.x - wordDistance;
+                if (realSize.x < probe.x) {
+                    realSize.x = probe.x;
                 }
                 realSize.y = lineY;
 
@@ -107,6 +107,7 @@ public class NewText extends Component {
             }
 
             if (!content.hasNext()) {
+                if (extendChar.getContent() != '\n') probe.translate(extendChar.getWidth() + wordDistance, 0);
                 int lineY = probe.y + lineMaxHeight;
                 if (lineY > heightBound) {
                     break allChar;
@@ -115,8 +116,8 @@ public class NewText extends Component {
                     c.setY(probe.y + lineMaxHeight);
                 }
                 bufferedChar.addAll(line);
-                if (realSize.x < probe.x - wordDistance) {
-                    realSize.x = probe.x - wordDistance;
+                if (realSize.x < probe.x) {
+                    realSize.x = probe.x;
                 }
                 realSize.y = lineY;
 

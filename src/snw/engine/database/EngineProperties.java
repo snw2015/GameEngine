@@ -42,7 +42,7 @@ public class EngineProperties {
                 "!cursor_drag_length  : 1",
                 "!cursor_busy_length  : 0",
 
-                "!default_text_font  : ",
+                "!default_text_font  : Serif",
                 "!default_text_size  : 20",
                 "!default_text_color : black"
         });
