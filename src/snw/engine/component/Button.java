@@ -27,8 +27,12 @@ public class Button extends FrameComponent {
         add(text);
     }
 
+    public Button(String name, int x, int y, Graphic background) {
+        this(name, x, y, background, "");
+    }
+
     public Button(String name, int x, int y, Image backgroundImg) {
-        this(name,x,y,backgroundImg,"");
+        this(name, x, y, backgroundImg, "");
     }
 
     public Button(String name, int x, int y, int width, int height, String rawtext) {
@@ -38,22 +42,23 @@ public class Button extends FrameComponent {
     public Button(String name, int x, int y, Image backgroundImg, String rawtext) {
         this(name, x, y, backgroundImg, rawtext, 0, 0);
     }
+
     public Button(String name, int x, int y, Image backgroundImg, String rawtext,
                   int borderX, int borderY) {
         this(name, x, y, backgroundImg.getWidth(null), backgroundImg.getHeight(null), backgroundImg, rawtext, borderX, borderY);
     }
 
     public Button(String name, int x, int y, int width, int height) {
-        this(name, x, y, width, height,"");
+        this(name, x, y, width, height, "");
     }
 
     public Button(String name, int x, int y, int width, int height, Image backgroundImg) {
-        this(name,x,y,width,height,backgroundImg,"");
+        this(name, x, y, width, height, backgroundImg, "");
     }
 
     public Button(String name, int x, int y, int width, int height, Image backgroundImg,
                   String rawtext) {
-        this(name,x,y,width,height,backgroundImg,rawtext,0,0);
+        this(name, x, y, width, height, backgroundImg, rawtext, 0, 0);
     }
 
     public Button(String name, int x, int y, int width, int height, Image backgroundImg,
@@ -111,7 +116,7 @@ public class Button extends FrameComponent {
 
         background = new Graphic(name + "_background", image, 0, 0, getWidth(),
                 getHeight(), false);
-        add(background,0);
+        add(background, 0);
     }
 
     public Text getText() {
@@ -124,7 +129,7 @@ public class Button extends FrameComponent {
         text = new Text(name + "_text", rawtext, getWidth() / 2, getHeight() / 2,
                 getWidth() - borderSize.x * 2, getHeight() - borderSize.y * 2);
         text.setAlignment(ALIGNMENT_CENTER);
-        add(text,1);
+        add(text, 1);
     }
 
     public void setReactionClicked(Reaction<VectorInt> reactionClicked) {
