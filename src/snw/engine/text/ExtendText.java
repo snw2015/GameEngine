@@ -406,6 +406,7 @@ public class ExtendText implements Cloneable {
     }
 
     public ExtendChar firstChar() {
+        if (!hasNext()) return null;
         next = 0;
         ExtendChar exChar = new ExtendChar(contents.charAt(next), colorList.first(), sizeList.first(), fontList.first());
         next++;
