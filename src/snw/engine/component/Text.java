@@ -1,124 +1,196 @@
 package snw.engine.component;
 
-import java.awt.*;
-import java.util.Iterator;
-
 import snw.engine.animation.AnimationData;
+import snw.engine.core.Engine;
+import snw.engine.text.ExtendText;
 import snw.math.VectorInt;
-import snw.engine.text.ExtensibleTextOld;
+
+import java.awt.*;
+import java.util.ArrayList;
 
 public class Text extends Component {
 
-    private ExtensibleTextOld content;
-    private int font;
-    private int color;
-    private int lineWidth;
-    private boolean hasProcessed = false;
+    private ExtendText content;
+    private String defaultFont;
+    private Color defaultColor;
+    private int defaultSize;
+
+    private VectorInt realSize;
+
+    private int wordDistance;
+    private int lineDistance;
+
+    private boolean hasProcessed;
     private int renderLength;
 
-    public Text(String name, String rawText, int x, int y, int width, int height) {
+    private final ArrayList<ExtendText.ExtendChar> bufferedChar = new ArrayList<>();
+
+    public Text(String name, String rawText, int x, int y, int width, int height, int wordDistance, int lineDistance, String defaultFont, int defaultSize,
+                Color defaultColor) {
         super(name, x, y, width, height);
-        content = new ExtensibleTextOld(rawText, 0, 0, width);
-        renderLength = content.getLength();
-        font = 0;
-        color = 0;
-        this.lineWidth = width;
+
+        this.defaultColor = defaultColor;
+        this.defaultFont = defaultFont;
+        this.defaultSize = defaultSize;
+        this.wordDistance = wordDistance;
+        this.lineDistance = lineDistance;
+
+        content = new ExtendText(rawText, defaultFont, defaultSize, defaultColor);
+        renderLength = content.length();
+
+        hasProcessed = false;
+        process();
+    }
+
+    public Text(String name, String rawText, int x, int y, int width, int height, int wordDistance, int lineDistance) {
+        this(name, rawText, x, y, width, height, wordDistance, lineDistance,
+                Engine.getProperty("default_text_font"),
+                Engine.getPropertyInt("default_text_size"),
+                ExtendText.COLOR_NAME_MAP.get(Engine.getProperty("default_text_color")));
+    }
+
+    public Text(String name, String rawText, int x, int y, int width, int height) {
+        this(name, rawText, x, y, width, height, 0, 0);
+    }
+
+    public Text(String name, String rawText, int x, int y, int width) {
+        this(name, rawText, x, y, width, -1);
+    }
+
+    public Text(String name, String rawText, int x, int y) {
+        this(name, rawText, x, y, -1);
+    }
+
+    public void process() {
+        bufferedChar.clear();
+        realSize = new VectorInt(0, 0);
+
+        VectorInt probe = new VectorInt(0, 0);
+        ArrayList<ExtendText.ExtendChar> line = new ArrayList<>();
+        final int widthBound = width == -1 ? Integer.MAX_VALUE : width;
+        final int heightBound = height == -1 ? Integer.MAX_VALUE : height;
+        int lineMaxHeight = 0;
+        int renderedLength = 0;
+
+        ExtendText.ExtendChar extendChar = content.firstChar();
+        //TODO refactor it pls
+        allChar:
+        while (renderedLength++ < renderLength && extendChar != null) {
+            if (probe.x + extendChar.getWidth() > widthBound || extendChar.getContent() == '\n') {
+                int lineY = probe.y + lineMaxHeight;
+                if (lineY > heightBound) {
+                    break allChar;
+                }
+                for (ExtendText.ExtendChar c : line) {
+                    c.setY(probe.y + lineMaxHeight);
+                }
+                bufferedChar.addAll(line);
+                if (realSize.x < probe.x) {
+                    realSize.x = probe.x;
+                }
+                realSize.y = lineY;
+
+                line.clear();
+
+                probe.translate(0, lineMaxHeight + lineDistance);
+                if (probe.y > heightBound) break allChar;
+                probe.x = 0;
+                lineMaxHeight = 0;
+            }
+
+            if (extendChar.getHeight() > lineMaxHeight) {
+                lineMaxHeight = extendChar.getHeight();
+            }
+
+            if (extendChar.getContent() != '\n') {
+                extendChar.setPos(probe);
+                line.add(extendChar);
+            }
+
+            if (!content.hasNext() || renderedLength >= renderLength) {
+                if (extendChar.getContent() != '\n') probe.translate(extendChar.getWidth() + wordDistance, 0);
+                int lineY = probe.y + lineMaxHeight;
+                if (lineY > heightBound) {
+                    break allChar;
+                }
+                for (ExtendText.ExtendChar c : line) {
+                    c.setY(probe.y + lineMaxHeight);
+                }
+                bufferedChar.addAll(line);
+                if (realSize.x < probe.x) {
+                    realSize.x = probe.x;
+                }
+                realSize.y = lineY;
+
+                break allChar;
+            }
+
+            if (extendChar.getContent() != '\n') probe.translate(extendChar.getWidth() + wordDistance, 0);
+            extendChar = content.nextChar();
+        }
+        if (bufferedChar.size() != 0) {
+            realSize.translate(0, bufferedChar.get(bufferedChar.size() - 1).getDescent() + 1);
+        }
+        hasProcessed = true;
     }
 
     @Override
     public void paint(Graphics2D g, AnimationData finalData) {
         if (!hasProcessed) {
-            VectorInt renderBound = content.processPos(g);
-            setSize(renderBound);
-            hasProcessed = true;
+            process();
         }
-
-        Iterator<Integer> itrci = content.getColorIndex().iterator();
-        Iterator<Color> itrc = content.getColors().iterator();
-        Iterator<Integer> itrfi = content.getFontIndex().iterator();
-        Iterator<Font> itrf = content.getFonts().iterator();
-
-        int indexc = itrci.next();
-        int indexf = itrfi.next();
-
-        String string = content.getContent();
-        VectorInt[] pos = content.getLetterPos();
-
-        for (int i = 0; i < renderLength; i++) {
-            if (indexc == i) {
-                g.setColor(itrc.next());
-                if (itrci.hasNext()) {
-                    indexc = itrci.next();
-                }
-            }
-            if (indexf == i) {
-                g.setFont(itrf.next());
-                if (itrfi.hasNext()) {
-                    indexf = itrfi.next();
-                }
-            }
-
-            drawString(g, string.substring(i, i + 1), pos[i].x, pos[i].y, finalData);
+        for (ExtendText.ExtendChar c : bufferedChar) {
+            drawChar(g, c, finalData);
         }
     }
 
-    private void drawString(Graphics2D g, String string, int x, int y, AnimationData finalData) {
-        Point pSrc = new Point(x, y);
+    @Override
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    @Override
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    @Override
+    public int getWidth() {
+        if (hasProcessed)
+            return realSize.x;
+        return 0;
+    }
+
+    @Override
+    public int getHeight() {
+        if (hasProcessed)
+            return realSize.y;
+        return 0;
+    }
+
+    private void drawChar(Graphics2D g, ExtendText.ExtendChar extendChar, AnimationData finalData) {
+        Point pSrc = new Point(extendChar.getPos().x, extendChar.getPos().y);
         Point pDst = new Point(0, 0);
 
         finalData.getTransformation().transform(pSrc, pDst);
 
-        //g.setClip(0,0,1000,1000);
-
         g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, finalData.getAlphaFloat()));
 
-        g.drawString(string, pDst.x, pDst.y);
-        //println(g.getClipBounds());
-        //println(string + "," + pDst.x + "," + pDst.y);
-    }
-
-    public void addString(String raw) {
-        content.addString(raw);
-        hasProcessed = false;
+        extendChar.render(g, pDst.x, pDst.y);
     }
 
     public void setString(String rawText) {
-        content = new ExtensibleTextOld(rawText, 0, 0, lineWidth);
-        setRenderLength(content.getLength());
+        content = new ExtendText(rawText, defaultFont, defaultSize, defaultColor);
+        setRenderLength(content.length());
         hasProcessed = false;
     }
 
-    public ExtensibleTextOld getContent() {
+    public ExtendText getContent() {
         return content;
     }
 
-    public void setContent(ExtensibleTextOld newContent) {
+    public void setContent(ExtendText newContent) {
         content = newContent;
-    }
-
-    public int getFont() {
-        return font;
-    }
-
-    public void setFont(int font) {
-        this.font = font;
-    }
-
-    public int getColor() {
-        return color;
-    }
-
-    public void setColor(int color) {
-        this.color = color;
-    }
-
-    public int getLineWidth() {
-        return lineWidth;
-    }
-
-    public void setLineWidth(int lineWidth) {
-        this.lineWidth = lineWidth;
-        content.setLineWidth(lineWidth);
     }
 
     public int getRenderLength() {
@@ -127,19 +199,70 @@ public class Text extends Component {
 
     public void setRenderLength(int renderLength) {
         this.renderLength = renderLength;
+        process();
     }
 
     public boolean addRenderLength() {
-        if (renderLength < content.getLength()) {
+        if (renderLength < content.length()) {
             setRenderLength(getRenderLength() + 1);
             return (true);
         }
         return (false);
     }
 
+    public String getDefaultFont() {
+        return defaultFont;
+    }
+
+    public void setDefaultFont(String defaultFont) {
+        this.defaultFont = defaultFont;
+        content.setDefaultFont(defaultFont);
+    }
+
+    public Color getDefaultColor() {
+        return defaultColor;
+    }
+
+    public void setDefaultColor(Color defaultColor) {
+        this.defaultColor = defaultColor;
+        content.setDefaultColor(defaultColor);
+    }
+
+    public int getDefaultSize() {
+        return defaultSize;
+    }
+
+    public void setDefaultSize(int defaultSize) {
+        this.defaultSize = defaultSize;
+        content.setDefaultSize(defaultSize);
+    }
+
+    public int getWordDistance() {
+        return wordDistance;
+    }
+
+    public void setWordDistance(int wordDistance) {
+        this.wordDistance = wordDistance;
+    }
+
+    public int getLineDistance() {
+        return lineDistance;
+    }
+
+    public void setLineDistance(int lineDistance) {
+        this.lineDistance = lineDistance;
+    }
+
+    public VectorInt getRealSize() {
+        return realSize;
+    }
+
+    public boolean HasProcessed() {
+        return hasProcessed;
+    }
+
     @Override
-    public String toString()
-    {
-        return name + "[" + content.getContent() + "]";
+    public String toString() {
+        return name + "[" + content + "]";
     }
 }

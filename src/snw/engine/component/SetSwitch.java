@@ -4,126 +4,109 @@ import snw.engine.component.reaction.Reaction;
 
 import java.awt.event.KeyEvent;
 
-public class SetSwitch extends FrameComponent
-{
-	private Text text;
-	private boolean isLoop = true;
-	private String[] contents;
-	private Reaction<String> reaction;
-	private int font = 0;
+public class SetSwitch extends FrameComponent {
+    private Text text;
+    private boolean isLoop = true;
+    private String[] contents;
+    private Reaction<String> reaction;
+    private String font = "Serif";
 
-	public int[] clickKey = new int[] { KeyEvent.VK_LEFT, KeyEvent.VK_RIGHT };
-	private int index = 0;
+    public int[] clickKey = new int[]{KeyEvent.VK_LEFT, KeyEvent.VK_RIGHT};
+    private int index = 0;
 
-	public SetSwitch(String name, int x, int y, int width, int height, String[] contents,
-			int font, int initialIndex, boolean isLoop)
-	{
-		super(name, x, y, width, height);
-		// TODO Auto-generated constructor stub
-		index = initialIndex;
-		text = new Text(name + "_text", contents[index], width/2, height/2, width, height);
-		this.font = font;
-		text.setFont(font);
-		text.setAlignment(ALIGNMENT_CENTER);
-		add(text);
+    public SetSwitch(String name, int x, int y, int width, int height, String[] contents,
+                     String font, int initialIndex, boolean isLoop) {
+        super(name, x, y, width, height);
+        // TODO Auto-generated constructor stub
+        index = initialIndex;
+        text = new Text(name + "_text", contents[index], width / 2, height / 2, width, height);
+        this.font = font;
+        text.setDefaultFont(font);
+        text.setAlignment(ALIGNMENT_CENTER);
+        add(text);
 
-		this.contents = contents;
-		this.isLoop = isLoop;
-	}
+        this.contents = contents;
+        this.isLoop = isLoop;
+    }
 
-	public SetSwitch(String name, int x, int y, int width, int height, String[] contents,
-			int initialIndex, boolean isLoop)
-	{
-		super(name, x, y, width, height);
-		// TODO Auto-generated constructor stub
-		index = initialIndex;
-		text = new Text(name + "_text", contents[index], width/2, height/2, width, height);
-		text.setFont(font);
-		text.setAlignment(ALIGNMENT_CENTER);
-		add(text);
+    public SetSwitch(String name, int x, int y, int width, int height, String[] contents,
+                     int initialIndex, boolean isLoop) {
+        super(name, x, y, width, height);
+        // TODO Auto-generated constructor stub
+        index = initialIndex;
+        text = new Text(name + "_text", contents[index], width / 2, height / 2, width, height);
+        text.setDefaultFont(font);
+        text.setAlignment(ALIGNMENT_CENTER);
+        add(text);
 
-		this.contents = contents;
-		this.isLoop = isLoop;
-	}
+        this.contents = contents;
+        this.isLoop = isLoop;
+    }
 
-	public SetSwitch(String name, int x, int y, int width, int height, String[] contents,
-			int initialIndex)
-	{
-		super(name, x, y, width, height);
-		// TODO Auto-generated constructor stub
-		index = initialIndex;
-		text = new Text(name + "_text", contents[index], width/2, height/2, width, height);
-		text.setFont(font);
-		text.setAlignment(ALIGNMENT_CENTER);
-		add(text);
+    public SetSwitch(String name, int x, int y, int width, int height, String[] contents,
+                     int initialIndex) {
+        super(name, x, y, width, height);
+        // TODO Auto-generated constructor stub
+        index = initialIndex;
+        text = new Text(name + "_text", contents[index], width / 2, height / 2, width, height);
+        text.setDefaultFont(font);
+        text.setAlignment(ALIGNMENT_CENTER);
+        add(text);
 
-		this.contents = contents;
-	}
+        this.contents = contents;
+    }
 
-	public SetSwitch(String name, int x, int y, int width, int height, String[] contents)
-	{
-		super(name, x, y, width, height);
-		// TODO Auto-generated constructor stub
-		text = new Text(name + "_text", contents[index], width/2, height/2, width, height);
-		text.setFont(font);
-		text.setAlignment(ALIGNMENT_CENTER);
-		add(text);
+    public SetSwitch(String name, int x, int y, int width, int height, String[] contents) {
+        super(name, x, y, width, height);
+        // TODO Auto-generated constructor stub
+        text = new Text(name + "_text", contents[index], width / 2, height / 2, width, height);
+        text.setDefaultFont(font);
+        text.setAlignment(ALIGNMENT_CENTER);
+        add(text);
 
-		this.contents = contents;
-	}
+        this.contents = contents;
+    }
 
-	private void switchRight()
-	{
-		if (isLoop || index < contents.length - 1)
-		{
-			index = (index + 1) % contents.length;
-			switchText();
-		}
-	}
+    private void switchRight() {
+        if (isLoop || index < contents.length - 1) {
+            index = (index + 1) % contents.length;
+            switchText();
+        }
+    }
 
-	private void switchLeft()
-	{
-		if (isLoop || index > 0)
-		{
-			index = (index - 1 + contents.length) % contents.length;
-			switchText();
-		}
-	}
+    private void switchLeft() {
+        if (isLoop || index > 0) {
+            index = (index - 1 + contents.length) % contents.length;
+            switchText();
+        }
+    }
 
-	private void switchText()
-	{
-		String result = contents[index];
+    private void switchText() {
+        String result = contents[index];
 
-		//print(result);
+        //print(result);
 
-		text.setString(result);
-		if (reaction != null)
-		{
-			reaction.react(result);
-		}
-	}
+        text.setString(result);
+        if (reaction != null) {
+            reaction.react(result);
+        }
+    }
 
-	@Override
-	public void keyPressed(int key)
-	{
-		if (key == clickKey[0])
-		{
-			switchLeft();
-		} else if (key == clickKey[1])
-		{
-			switchRight();
-		}
-	}
+    @Override
+    public void keyPressed(int key) {
+        if (key == clickKey[0]) {
+            switchLeft();
+        } else if (key == clickKey[1]) {
+            switchRight();
+        }
+    }
 
-	@Override
-	public void mouseClicked(int mouseX, int mouseY)
-	{
-		if (mouseX < getWidth() / 2)
-		{
-			switchLeft();
-		} else
-		{
-			switchRight();
-		}
-	}
+    @Override
+    public void mouseClicked(int mouseX, int mouseY) {
+        if (mouseX < getWidth() / 2) {
+            switchLeft();
+        } else {
+            switchRight();
+        }
+    }
 }

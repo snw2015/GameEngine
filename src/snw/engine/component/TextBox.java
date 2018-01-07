@@ -1,14 +1,12 @@
 package snw.engine.component;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
-
 import java.awt.*;
 
 import javax.swing.ImageIcon;
 
 public class TextBox extends FrameComponent {
     private Graphic background;
-    protected NewText text;
+    protected Text text;
 
     private int borderWidth = 18;
     private int borderHeight = 9;
@@ -18,7 +16,7 @@ public class TextBox extends FrameComponent {
                 new ImageIcon(backgroundSource).getIconHeight());
         background = new Graphic(name + "_background", backgroundSource, 0, 0, false);
         add(background);
-        text = new NewText(name + "_text", "", borderWidth, borderHeight,
+        text = new Text(name + "_text", "", borderWidth, borderHeight,
                 getWidth() - borderWidth * 2, getHeight() - borderHeight * 2);
         add(text);
     }
@@ -28,7 +26,7 @@ public class TextBox extends FrameComponent {
                 new ImageIcon(backgroundSource).getIconHeight());
         background = new Graphic(name + "_background", backgroundSource, 0, 0, false);
         add(background);
-        text = new NewText(name + "_text", "", borderWidth, borderHeight,
+        text = new Text(name + "_text", "", borderWidth, borderHeight,
                 getWidth() - borderWidth * 2, getHeight() - borderHeight * 2);
         add(text);
     }
@@ -37,7 +35,7 @@ public class TextBox extends FrameComponent {
         super(name, x, y, width, height);
         background = new Graphic(name + "_background", backgroundSource, 0, 0, width, height, false);
         add(background);
-        text = new NewText(name + "_text", "", borderWidth, borderHeight,
+        text = new Text(name + "_text", "", borderWidth, borderHeight,
                 width - borderWidth * 2, height - borderHeight * 2);
         add(text);
     }
@@ -47,7 +45,7 @@ public class TextBox extends FrameComponent {
                 new ImageIcon(backgroundSource).getIconHeight());
         background = new Graphic(name + "_background", backgroundSource, 0, 0, false);
         add(background);
-        text = new NewText(name + "_text", rawText, borderWidth, borderHeight,
+        text = new Text(name + "_text", rawText, borderWidth, borderHeight,
                 getWidth() - borderWidth * 2, getHeight() - borderHeight * 2);
         add(text);
     }
@@ -57,7 +55,7 @@ public class TextBox extends FrameComponent {
                 new ImageIcon(backgroundSource).getIconHeight());
         background = new Graphic(name + "_background", backgroundSource, 0, 0, false);
         add(background);
-        text = new NewText(name + "_text", rawText, borderWidth, borderHeight,
+        text = new Text(name + "_text", rawText, borderWidth, borderHeight,
                 getWidth() - borderWidth * 2, getHeight() - borderHeight * 2);
         add(text);
     }
@@ -68,7 +66,7 @@ public class TextBox extends FrameComponent {
 
         background = new Graphic(name + "_background", backgroundSource, 0, 0, width, height, false);
         add(background);
-        text = new NewText(name + "_text", rawText, borderWidth, borderHeight,
+        text = new Text(name + "_text", rawText, borderWidth, borderHeight,
                 width - borderWidth * 2, height - borderHeight * 2);
         add(text);
     }
@@ -104,7 +102,7 @@ public class TextBox extends FrameComponent {
         text.setDefaultSize(size);
     }
 
-    public void setText(NewText text) {
+    public void setText(Text text) {
         this.text = text;
     }
 
