@@ -4,6 +4,18 @@ import java.awt.Rectangle;
 import java.util.Random;
 
 public class VectorInt {
+    public final static VectorInt UP = new VectorInt(0, -1);
+    public final static VectorInt DOWN = new VectorInt(0, 1);
+    public final static VectorInt LEFT = new VectorInt(-1, 0);
+    public final static VectorInt RIGHT = new VectorInt(1, 0);
+    public final static VectorInt UP_LEFT = new VectorInt(-1, -1);
+    public final static VectorInt UP_RIGHT = new VectorInt(1, -1);
+    public final static VectorInt DOWN_LEFT = new VectorInt(-1, 1);
+    public final static VectorInt DOWN_RIGHT = new VectorInt(1, 1);
+    public final static VectorInt[] SURROUND = new VectorInt[]{
+            UP, DOWN, LEFT, RIGHT, UP_LEFT, UP_RIGHT, DOWN_LEFT, DOWN_RIGHT
+    };
+
     public int x;
     public int y;
 
@@ -96,6 +108,14 @@ public class VectorInt {
 
     public void translate(VectorInt delta) {
         translate(delta.x, delta.y);
+    }
+
+    public VectorInt[] getSurround() {
+        VectorInt[] surround = new VectorInt[8];
+        for (int i = 0; i < 8; i++) {
+            surround[i] = add(SURROUND[i]);
+        }
+        return surround;
     }
 
     @Override
