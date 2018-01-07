@@ -16,12 +16,12 @@ public class NormalPanel extends FrameComponent {
     }
 
     public void setBackground(String imageName) {
-        Graphic background = new Graphic(name + "_background", Engine.getImage(imageName), 0, 0, width, height);
+        Graphic background = new Graphic(name + "_background", Engine.getImage(imageName), 0, 0, getWidth(), getHeight());
         add(background);
     }
 
     public void setBackground(Color color) {
-        Graphic background = new Graphic(name + "_background", color, 0, 0, width, height);
+        Graphic background = new Graphic(name + "_background", color, 0, 0, getWidth(), getHeight());
         add(background);
     }
 }

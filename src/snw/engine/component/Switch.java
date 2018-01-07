@@ -41,9 +41,9 @@ public class Switch extends FrameComponent {
                   int initialState) {
         super(name, x, y, imageOn.getWidth(null), imageOn.getHeight(null));
         // TODO Auto-generated constructor stub
-        graphicOn = new Graphic(name + "_graphic_on", imageOn, width / 2, height / 2, false);
+        graphicOn = new Graphic(name + "_graphic_on", imageOn, getWidth() / 2, getHeight() / 2, false);
         graphicOn.setAlignment(ALIGNMENT_CENTER);
-        graphicOff = new Graphic(name + "_graphic_off", imageOff, width / 2, height / 2, false);
+        graphicOff = new Graphic(name + "_graphic_off", imageOff, getWidth() / 2, getHeight() / 2, false);
         graphicOff.setAlignment(ALIGNMENT_CENTER);
 
         add(graphicOn);
@@ -74,9 +74,9 @@ public class Switch extends FrameComponent {
     public Switch(String name, int x, int y, Image imageOn, Image imageOff) {
         super(name, x, y, imageOn.getWidth(null), imageOn.getHeight(null));
         // TODO Auto-generated constructor stub
-        graphicOn = new Graphic(name + "_graphic_on", imageOn, width / 2, height / 2, false);
+        graphicOn = new Graphic(name + "_graphic_on", imageOn, getWidth() / 2, getHeight() / 2, false);
         graphicOn.setAlignment(ALIGNMENT_CENTER);
-        graphicOff = new Graphic(name + "_graphic_off", imageOff, width / 2, height / 2, false);
+        graphicOff = new Graphic(name + "_graphic_off", imageOff, getWidth() / 2, getHeight() / 2, false);
         graphicOff.setAlignment(ALIGNMENT_CENTER);
 
         add(graphicOn);
@@ -102,7 +102,7 @@ public class Switch extends FrameComponent {
 
     @Override
     public void mouseClicked(int mouseX, int mouseY) {
-        if (mouseX < width / 2) {
+        if (mouseX < getWidth() / 2) {
             switchOn();
         } else {
             switchOff();

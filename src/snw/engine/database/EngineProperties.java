@@ -2,6 +2,7 @@ package snw.engine.database;
 
 import snw.engine.core.Engine;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,19 +26,26 @@ public class EngineProperties {
     public void clear() {
         properties.clear();
         loadAllDefault(new String[]{
-                "!properties_path: properties.txt",
                 "!fps            : 60",
                 "!size           : 1680 x 1050",
+
+                "!properties_path: properties.txt",
                 "!images_path    : file/image/",
                 "!sounds_path    : file/audio/",
                 "!data_path      : file/data/",
                 "!data_form      : .txt",
                 "!user_data_path : file/data/",
                 "!user_data_form : .sav",
+
                 "!cursor_name    : cursor",
                 "!cursor_normal_length: 6",
                 "!cursor_drag_length  : 1",
-                "!cursor_busy_length  : 0",});
+                "!cursor_busy_length  : 0",
+
+                "!default_text_font  : ",
+                "!default_text_size  : 20",
+                "!default_text_color : black"
+        });
         readPropertiesFile();
     }
 

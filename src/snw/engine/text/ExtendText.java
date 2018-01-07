@@ -1,72 +1,74 @@
 package snw.engine.text;
 
 import snw.engine.core.Engine;
+import snw.math.VectorInt;
 import snw.structure.LengthList;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ExtendText implements Cloneable {
-    public final static HashMap<String, Color> colorNameMap = new HashMap<>();
+    public final static HashMap<String, Color> COLOR_NAME_MAP = new HashMap<>();
 
     static {
-        colorNameMap.put("WHITE", Color.white);
-        colorNameMap.put("white", Color.white);
-        colorNameMap.put("BLACK", Color.black);
-        colorNameMap.put("black", Color.black);
-        colorNameMap.put("RED", Color.red);
-        colorNameMap.put("red", Color.red);
-        colorNameMap.put("BLUE", Color.blue);
-        colorNameMap.put("blue", Color.blue);
-        colorNameMap.put("GREEN", Color.green);
-        colorNameMap.put("green", Color.green);
-        colorNameMap.put("YELLOW", Color.yellow);
-        colorNameMap.put("yellow", Color.yellow);
+        COLOR_NAME_MAP.put("WHITE", Color.white);
+        COLOR_NAME_MAP.put("white", Color.white);
+        COLOR_NAME_MAP.put("BLACK", Color.black);
+        COLOR_NAME_MAP.put("black", Color.black);
+        COLOR_NAME_MAP.put("RED", Color.red);
+        COLOR_NAME_MAP.put("red", Color.red);
+        COLOR_NAME_MAP.put("BLUE", Color.blue);
+        COLOR_NAME_MAP.put("blue", Color.blue);
+        COLOR_NAME_MAP.put("GREEN", Color.green);
+        COLOR_NAME_MAP.put("green", Color.green);
+        COLOR_NAME_MAP.put("YELLOW", Color.yellow);
+        COLOR_NAME_MAP.put("yellow", Color.yellow);
     }
 
     private String contents;
     private LengthList<Color> colorList;
     private LengthList<Integer> sizeList;
     private LengthList<String> fontList;
-    private ArrayList<Integer> contentsWidth;
 
-    private int next = 0;
+    private int next;
 
+    private Color defaultColor;
+    private String defaultFont;
+    private int defaultSize;
 
-    //TODO default width and height
+    //TODO how can I set this?
     private static final Graphics g = new BufferedImage(100, 100, BufferedImage.TYPE_4BYTE_ABGR).getGraphics();
 
-    private class ExtendChar {
-        private char contents;
+    public class ExtendChar {
+        private char content;
         private Color color;
         private int size;
         private String font;
         private int width;
+        private int height;
+        private VectorInt pos;
 
-        private ExtendChar(char contents, Color color, int size, String font) {
-            this.contents = contents;
+        private ExtendChar(char content, Color color, int size, String font, VectorInt pos) {
+            this.content = content;
             this.color = color;
             this.size = size;
             this.font = font;
-            this.width = ExtendText.getWidth(contents, size, font);
+            width = ExtendText.getWidth(content, size, font);
+            height = ExtendText.getHeight(size, font);
+            this.pos = pos;
         }
 
-        private ExtendChar(char contents, Color color, int size, String font, int width) {
-            this.contents = contents;
-            this.color = color;
-            this.size = size;
-            this.font = font;
-            this.width = width;
+        private ExtendChar(char content, Color color, int size, String font) {
+            this(content, color, size, font, new VectorInt(0, 0));
         }
 
-        public char getContents() {
-            return contents;
+        public char getContent() {
+            return content;
         }
 
-        public void setContents(char contents) {
-            this.contents = contents;
+        public void setContent(char content) {
+            this.content = content;
         }
 
         public Color getColor() {
@@ -97,45 +99,87 @@ public class ExtendText implements Cloneable {
             return width;
         }
 
-        public void setWidth(int width) {
-            this.width = width;
+        public int getHeight() {
+            return height;
+        }
+
+        public VectorInt getPos() {
+            return new VectorInt(pos);
+        }
+
+        public void setPos(VectorInt pos) {
+            this.pos = new VectorInt(pos);
+        }
+
+        public int getDescent() {
+            return ExtendText.getDescent(size, font);
         }
 
         public void render(Graphics g, int x, int y) {
-            g.setFont(new Font(font, Font.PLAIN, size));
-            g.setColor(color);
+            if (g.getClipBounds().intersects(new Rectangle(x, y - height, width, height))) {
+                g.setFont(new Font(font, Font.PLAIN, size));
+                g.setColor(color);
 
-            g.drawString("" + contents, x, y);
+                g.drawString("" + content, x, y);
+            }
+        }
+
+        public void render(Graphics g) {
+            render(g, pos.x, pos.y);
         }
 
         @Override
         public String toString() {
-            String s = "ExtendChar: " + contents + "\n";
+            String s = "ExtendChar: " + content + "\n";
             s += "Color: " + color + "\n";
             s += "Font: " + font + "\n";
             s += "Size: " + size + "\n";
-            s += "Width: " + width + "\n";
+            s += "Render: " + new Rectangle(pos.x, pos.y, width, height);
 
             return s;
+        }
+
+        public void setX(int x) {
+            pos.x = x;
+        }
+
+        public void setY(int y) {
+            pos.y = y;
         }
     }
 
     private static int getWidth(char c, int size, String font) {
         FontMetrics fm = g.getFontMetrics(Font.decode(font + "-" + size));
-        return getWidth(c, fm);
-    }
-
-    private static int getWidth(char c, FontMetrics fm) {
         return fm.charWidth(c);
     }
 
-    public ExtendText(String rawText) {
+    private static int getHeight(int size, String font) {
+        FontMetrics fm = g.getFontMetrics(Font.decode(font + "-" + size));
+        return fm.getHeight();
+    }
+
+    private static int getDescent(int size, String font) {
+        FontMetrics fm = g.getFontMetrics(Font.decode(font + "-" + size));
+        return fm.getDescent();
+    }
+
+    public ExtendText(String rawText, String defaultFont, int defaultSize, Color defaultColor) {
         this.contents = "";
         this.colorList = new LengthList<>();
         this.sizeList = new LengthList<>();
         this.fontList = new LengthList<>();
-        this.contentsWidth = new ArrayList<>();
+        this.defaultColor = defaultColor;
+        this.defaultSize = defaultSize;
+        this.defaultFont = defaultFont;
+        next = 0;
         resolveRawText(rawText);
+    }
+
+    public ExtendText(String rawText) {
+        this(rawText,
+                Engine.getProperty("default_text_font"),
+                Engine.getPropertyInt("default_text_size"),
+                COLOR_NAME_MAP.get(Engine.getProperty("default_text_color")));
     }
 
     public ExtendText(ExtendText src) {
@@ -143,22 +187,20 @@ public class ExtendText implements Cloneable {
         this.colorList = src.colorList.clone();
         this.sizeList = src.sizeList.clone();
         this.fontList = src.fontList.clone();
-        this.contentsWidth = src.contentsWidth;
+        this.defaultColor = src.defaultColor;
+        this.defaultSize = src.defaultSize;
+        this.defaultFont = src.defaultFont;
+        next = 0;
     }
 
     public ExtendText() {
-        this.contents = "";
-        this.colorList = new LengthList<>();
-        this.sizeList = new LengthList<>();
-        this.fontList = new LengthList<>();
-        this.contentsWidth = new ArrayList<>();
+        this("");
     }
 
     private void resolveRawText(String rawText) {
-        //TODO
-        colorList.append(colorNameMap.get(Engine.getProperty("default_text_color")), 0);
-        fontList.append(Engine.getProperty("default_font_name"), 0);
-        sizeList.append(Engine.getPropertyInt("default_font_size"), 0);
+        colorList.append(defaultColor, 0);
+        fontList.append(defaultFont, 0);
+        sizeList.append(defaultSize, 0);
 
         resolveText(rawText, 0);
     }
@@ -168,11 +210,25 @@ public class ExtendText implements Cloneable {
 
         char symbol = text.charAt(depth);
 
-        if (symbol == '\\') {
-            resolveCommand(text, depth + 1);
-        } else {
-            append(symbol);
-            resolveText(text, depth + 1);
+        switch (symbol) {
+            case '\\':
+                resolveCommand(text, depth + 1);
+                break;
+            case '\n':
+                append('\n');
+                if (depth < text.length() - 1 && text.charAt(depth + 1) == '\r') {
+                    resolveText(text, depth + 2);
+                } else {
+                    resolveText(text, depth + 1);
+                }
+                break;
+            case '\r':
+                append('\n');
+                resolveText(text, depth + 1);
+                break;
+            default:
+                append(symbol);
+                resolveText(text, depth + 1);
         }
     }
 
@@ -188,23 +244,20 @@ public class ExtendText implements Cloneable {
                 resolveText(text, depth + 1);
                 break;
             case 'c':
-                resolveColorCommand(text, depth + 1);
-                break;
             case 'C':
                 resolveColorCommand(text, depth + 1);
                 break;
             case 'f':
-                resolveFontCommand(text, depth + 1);
-                break;
             case 'F':
                 resolveFontCommand(text, depth + 1);
                 break;
             case 's':
-                resolveSizeCommand(text, depth + 1);
-                break;
             case 'S':
                 resolveSizeCommand(text, depth + 1);
                 break;
+            case 'n':
+                append("\n");
+                resolveText(text, depth + 1);
             default:
                 //TODO throw error
         }
@@ -212,33 +265,44 @@ public class ExtendText implements Cloneable {
 
     private void resolveColorCommand(String text, int depth) {
         int commandEnd = text.indexOf('}', depth + 1);
-        String[] command = text.substring(depth + 1, commandEnd).split(",");
+        String info = text.substring(depth + 1, commandEnd);
 
-        Color color = null;
-        if (command.length == 1) {
-            color = getColorByName(command[0]);
-        } else if (command.length == 3) {
-            color = new Color(Integer.parseInt(command[0]), Integer.parseInt(command[1]), Integer.parseInt(command[2]));
-        } else {
-            //TODO throw error
-            return;
-        }
-
-        colorList.append(color, 0);
+        colorList.append(resolveColorInfo(info), 0);
 
         resolveText(text, commandEnd + 1);
     }
 
+    private Color resolveColorInfo(String info) {
+        String[] commands = info.split(",");
+
+        Color color = null;
+        if (commands.length == 1) {
+            color = getColorByName(commands[0]);
+        } else if (commands.length == 3) {
+            color = new Color(Integer.parseInt(commands[0]), Integer.parseInt(commands[1]), Integer.parseInt(commands[2]));
+        } else {
+            color = defaultColor;
+        }
+
+        return color;
+    }
+
     private Color getColorByName(String name) {
-        if (!colorNameMap.containsKey(name))
-            name = Engine.getProperty("default_text_color");
-        return (colorNameMap.get(name));
+        if (COLOR_NAME_MAP.containsKey(name))
+            return (COLOR_NAME_MAP.get(name));
+
+        String info = Engine.getProperty("color<" + name + ">");
+        if (info != null) {
+            return resolveColorInfo(info);
+        }
+        return defaultColor;
     }
 
     private void resolveFontCommand(String text, int depth) {
         int commandEnd = text.indexOf('}', depth + 1);
         String font = text.substring(depth + 1, commandEnd);
 
+        if (font.equals("")) font = defaultFont;
         fontList.append(font, 0);
 
         resolveText(text, commandEnd + 1);
@@ -246,8 +310,13 @@ public class ExtendText implements Cloneable {
 
     private void resolveSizeCommand(String text, int depth) {
         int commandEnd = text.indexOf('}', depth + 1);
-        int size = Integer.parseInt(text.substring(depth + 1, commandEnd));
-
+        String sizeStr = text.substring(depth + 1, commandEnd);
+        int size = 0;
+        if (!sizeStr.equals("")) {
+            size = Integer.parseInt(sizeStr);
+        } else {
+            size = defaultSize;
+        }
         sizeList.append(size, 0);
 
         resolveText(text, commandEnd + 1);
@@ -262,8 +331,6 @@ public class ExtendText implements Cloneable {
         colorList.increaseFinal(1);
         sizeList.increaseFinal(1);
         fontList.increaseFinal(1);
-
-        contentsWidth.add(getWidth(symbol, sizeList.getLastContent(), fontList.getLastContent()));
     }
 
     public void append(ExtendText text) {
@@ -271,7 +338,6 @@ public class ExtendText implements Cloneable {
         colorList.append(text.colorList);
         sizeList.append(text.sizeList);
         fontList.append(text.fontList);
-        contentsWidth.addAll(text.contentsWidth);
     }
 
     public ExtendText add(String rawText) {
@@ -294,7 +360,6 @@ public class ExtendText implements Cloneable {
         sizeList.increseIndices(textLength, sizeList.firstOver(index));
 
         ExtendText textForWidth = new ExtendText(text);
-        contentsWidth.addAll(index, textForWidth.contentsWidth);
     }
 
     public void remove(int index) {
@@ -341,19 +406,50 @@ public class ExtendText implements Cloneable {
     }
 
     public ExtendChar firstChar() {
-        //TODO
+        next = 0;
+        ExtendChar exChar = new ExtendChar(contents.charAt(next), colorList.first(), sizeList.first(), fontList.first());
+        next++;
 
-
-        return null;
+        return exChar;
     }
 
     public ExtendChar nextChar() {
-        //TODO
-        return null;
+        ExtendChar exChar = new ExtendChar(contents.charAt(next), colorList.next(), sizeList.next(), fontList.next());
+        next++;
+
+        return exChar;
+    }
+
+    public boolean hasNext() {
+        return length() > next;
     }
 
     public int length() {
         return contents.length();
+    }
+
+    public Color getDefaultColor() {
+        return defaultColor;
+    }
+
+    public void setDefaultColor(Color defaultColor) {
+        this.defaultColor = defaultColor;
+    }
+
+    public String getDefaultFont() {
+        return defaultFont;
+    }
+
+    public void setDefaultFont(String defaultFont) {
+        this.defaultFont = defaultFont;
+    }
+
+    public int getDefaultSize() {
+        return defaultSize;
+    }
+
+    public void setDefaultSize(int defaultSize) {
+        this.defaultSize = defaultSize;
     }
 
     @Override
@@ -383,8 +479,6 @@ public class ExtendText implements Cloneable {
         result += colorList.toString() + "\n";
         result += "Size: \n";
         result += sizeList.toString() + "\n";
-        result += "Width: \n";
-        result += contentsWidth.toString() + "\n";
 
         return result;
     }

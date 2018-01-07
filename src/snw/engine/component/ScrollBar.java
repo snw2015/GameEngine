@@ -45,12 +45,12 @@ public class ScrollBar extends FrameComponent {
 
     @Override
     public void mouseClicked(int mouseX, int mouseY) {
-        if (mouseX > width - sliderWidth / 2) {
-            mouseX = width - sliderWidth / 2;
+        if (mouseX > getWidth() - sliderWidth / 2) {
+            mouseX = getWidth() - sliderWidth / 2;
         } else if (mouseX < sliderWidth / 2) {
             mouseX = sliderWidth / 2;
         }
-        setBarValue((double) (mouseX - sliderWidth / 2) / (double) (width - sliderWidth));
+        setBarValue((double) (mouseX - sliderWidth / 2) / (double) (getWidth() - sliderWidth));
 
         slider.setPos(mouseX - sliderWidth / 2, 0);
 

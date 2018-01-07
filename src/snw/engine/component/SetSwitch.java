@@ -118,7 +118,7 @@ public class SetSwitch extends FrameComponent
 	@Override
 	public void mouseClicked(int mouseX, int mouseY)
 	{
-		if (mouseX < width / 2)
+		if (mouseX < getWidth() / 2)
 		{
 			switchLeft();
 		} else

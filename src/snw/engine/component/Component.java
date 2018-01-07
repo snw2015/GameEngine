@@ -60,8 +60,8 @@ public abstract class Component {
         initialX = x;
         this.y = y;
         initialY = y;
-        this.width = width;
-        this.height = height;
+        this.setWidth(width);
+        this.setHeight(height);
         this.focusable = focusable;
     }
 
@@ -264,12 +264,12 @@ public abstract class Component {
     }
 
     public Shape getClip() {
-        if (animationData == null) return new Rectangle(getAlignedX(), getAlignedY(), width, height);
+        if (animationData == null) return new Rectangle(getAlignedX(), getAlignedY(), getWidth(), getHeight());
         double[] originPoints = new double[]{
                 0, 0,
-                width, 0,
-                width, height,
-                0, height};
+                getWidth(), 0,
+                getWidth(), getHeight(),
+                0, getHeight()};
 
         //println(name + ": " + Arrays.toString(originPoints));
 
@@ -294,9 +294,9 @@ public abstract class Component {
     public Shape getClip(AffineTransform transform) {
         double[] originPoints = new double[]{
                 0, 0,
-                width, 0,
-                width, height,
-                0, height};
+                getWidth(), 0,
+                getWidth(), getHeight(),
+                0, getHeight()};
 
         double[] newPoints = new double[8];
         transform.transform(originPoints, 0, newPoints, 0, 4);
@@ -384,7 +384,7 @@ public abstract class Component {
     }
 
     public VectorInt getSize() {
-        return (new VectorInt(width, height));
+        return (new VectorInt(getWidth(), getHeight()));
     }
 
     public boolean isAnimated() {
@@ -396,7 +396,7 @@ public abstract class Component {
     }
 
     public int getXDelta() {
-        return (int) ((double) width * alignmentRatioList[alignment].x);
+        return (int) ((double) getWidth() * alignmentRatioList[alignment].x);
     }
 
     public int getAlignedX() {
@@ -404,7 +404,7 @@ public abstract class Component {
     }
 
     public int getYDelta() {
-        return (int) ((double) height * alignmentRatioList[alignment].y);
+        return (int) ((double) getHeight() * alignmentRatioList[alignment].y);
     }
 
     public int getAlignedY() {

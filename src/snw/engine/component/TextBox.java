@@ -19,7 +19,7 @@ public class TextBox extends FrameComponent
 		background = new Graphic(name + "_background", backgroundSource, 0, 0,false);
 		add(background);
 		text = new Text(name + "_text", "", borderWidth, borderHeight,
-				width - borderWidth * 2, height - borderHeight * 2);
+				getWidth() - borderWidth * 2, getHeight() - borderHeight * 2);
 		add(text);
 	}
 
@@ -30,7 +30,7 @@ public class TextBox extends FrameComponent
 		background = new Graphic(name + "_background", backgroundSource, 0, 0,false);
 		add(background);
 		text = new Text(name + "_text", "", borderWidth, borderHeight,
-				width - borderWidth * 2, height - borderHeight * 2);
+				getWidth() - borderWidth * 2, getHeight() - borderHeight * 2);
 		add(text);
 	}
 
@@ -51,7 +51,7 @@ public class TextBox extends FrameComponent
 		background = new Graphic(name + "_background", backgroundSource, 0, 0,false);
 		add(background);
 		text = new Text(name + "_text", rawText, borderWidth, borderHeight,
-				width - borderWidth * 2, height - borderHeight * 2);
+				getWidth() - borderWidth * 2, getHeight() - borderHeight * 2);
 		add(text);
 	}
 
@@ -62,7 +62,7 @@ public class TextBox extends FrameComponent
 		background = new Graphic(name + "_background", backgroundSource, 0, 0,false);
 		add(background);
 		text = new Text(name + "_text", rawText, borderWidth, borderHeight,
-				width - borderWidth * 2, height - borderHeight * 2);
+				getWidth() - borderWidth * 2, getHeight() - borderHeight * 2);
 		add(text);
 	}
 
@@ -87,7 +87,7 @@ public class TextBox extends FrameComponent
 	{
 		this.borderWidth = borderWidth;
 		text.setX(borderWidth);
-		text.setLineWidth(width - borderWidth * 2);
+		text.setLineWidth(getWidth() - borderWidth * 2);
 	}
 
 	public int getBorderHeight()

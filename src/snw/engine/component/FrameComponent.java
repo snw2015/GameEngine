@@ -162,7 +162,7 @@ public class FrameComponent extends Component {
     @Override
     public void paint(Graphics2D g, AnimationData appliedData) {
         synchronized (this) {
-            Rectangle bound = new Rectangle(0, 0, width, height);
+            Rectangle bound = new Rectangle(0, 0, getWidth(), getHeight());
 
             //println(name + " render: " + subComponents);
 
@@ -195,7 +195,7 @@ public class FrameComponent extends Component {
 
     private boolean isInBound(Component sub, int x, int y, int width, int height) {
         int l1 = x, r1 = x + width, t1 = y, b1 = y + height;
-        int l2 = sub.x, r2 = sub.x + sub.width, t2 = sub.y, b2 = sub.y + sub.height;
+        int l2 = sub.x, r2 = sub.x + sub.getWidth(), t2 = sub.y, b2 = sub.y + sub.getHeight();
         return (l1 <= r2 && r1 >= l2 && t1 <= b2 && b1 >= t2);
     }
 

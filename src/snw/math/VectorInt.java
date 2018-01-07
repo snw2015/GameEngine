@@ -89,6 +89,15 @@ public class VectorInt {
         return new VectorInt(rnd.nextInt(rangeX), rnd.nextInt(rangeY));
     }
 
+    public void translate(int deltaX, int deltaY) {
+        x += deltaX;
+        y += deltaY;
+    }
+
+    public void translate(VectorInt delta) {
+        translate(delta.x, delta.y);
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof VectorInt) {

@@ -109,8 +109,8 @@ public class Button extends FrameComponent {
     public void setBackground(Image image) {
         remove(background);
 
-        background = new Graphic(name + "_background", image, 0, 0, width,
-                height, false);
+        background = new Graphic(name + "_background", image, 0, 0, getWidth(),
+                getHeight(), false);
         add(background,0);
     }
 
@@ -121,8 +121,8 @@ public class Button extends FrameComponent {
     public void setText(String rawtext) {
         remove(text);
 
-        text = new Text(name + "_text", rawtext, width / 2, height / 2,
-                width - borderSize.x * 2, height - borderSize.y * 2);
+        text = new Text(name + "_text", rawtext, getWidth() / 2, getHeight() / 2,
+                getWidth() - borderSize.x * 2, getHeight() - borderSize.y * 2);
         text.setAlignment(ALIGNMENT_CENTER);
         add(text,1);
     }
