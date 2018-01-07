@@ -1,6 +1,7 @@
 package snw.math;
 
 import java.awt.Rectangle;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class VectorInt {
@@ -116,6 +117,19 @@ public class VectorInt {
             surround[i] = add(SURROUND[i]);
         }
         return surround;
+    }
+
+    public VectorInt[] getSurroundInBound(int x, int y, int width, int height) {
+        ArrayList<VectorInt> surround = new ArrayList<>();
+        for (int i = 0; i < 8; i++) {
+            VectorInt point = add(SURROUND[i]);
+            if (point.inBound(x, y, width, height)) {
+                surround.add(point);
+            }
+        }
+        VectorInt[] a = new VectorInt[0];
+
+        return surround.toArray(a);
     }
 
     @Override
