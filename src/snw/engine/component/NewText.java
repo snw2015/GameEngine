@@ -70,11 +70,12 @@ public class NewText extends Component {
         final int widthBound = width == -1 ? Integer.MAX_VALUE : width;
         final int heightBound = height == -1 ? Integer.MAX_VALUE : height;
         int lineMaxHeight = 0;
+        int renderedLength = 0;
 
         ExtendText.ExtendChar extendChar = content.firstChar();
         //TODO refactor it pls
         allChar:
-        while (extendChar != null) {
+        while (renderedLength++ < renderLength && extendChar != null) {
             if (probe.x + extendChar.getWidth() > widthBound || extendChar.getContent() == '\n') {
                 int lineY = probe.y + lineMaxHeight;
                 if (lineY > heightBound) {
@@ -106,7 +107,7 @@ public class NewText extends Component {
                 line.add(extendChar);
             }
 
-            if (!content.hasNext()) {
+            if (!content.hasNext() || renderedLength >= renderLength) {
                 if (extendChar.getContent() != '\n') probe.translate(extendChar.getWidth() + wordDistance, 0);
                 int lineY = probe.y + lineMaxHeight;
                 if (lineY > heightBound) {
@@ -198,6 +199,7 @@ public class NewText extends Component {
 
     public void setRenderLength(int renderLength) {
         this.renderLength = renderLength;
+        process();
     }
 
     public boolean addRenderLength() {
