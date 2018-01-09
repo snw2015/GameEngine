@@ -182,7 +182,6 @@ public class Text extends Component {
     public void setString(String rawText) {
         content = new ExtendText(rawText, defaultFont, defaultSize, defaultColor);
         setRenderLength(content.length());
-        hasProcessed = false;
     }
 
     public ExtendText getContent() {
