@@ -16,98 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="FileIOHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/snw/file/FileIOHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2997">
-              <caret line="118" column="33" lean-forward="false" selection-start-line="118" selection-start-column="33" selection-end-line="118" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AudioData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/snw/engine/database/AudioData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Component.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/snw/engine/component/Component.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="501" column="18" lean-forward="false" selection-start-line="501" selection-start-column="18" selection-end-line="501" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ScrollPanel.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/snw/engine/component/ScrollPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VectorInt.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/snw/math/VectorInt.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2295">
-              <caret line="111" column="5" lean-forward="false" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VectorDbl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/snw/math/VectorDbl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FrameEvent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/snw/engine/component/event/FrameEvent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MovingTextBox.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/snw/engine/component/MovingTextBox.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1539">
-              <caret line="57" column="16" lean-forward="false" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MovingGraphic.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/snw/engine/component/MovingGraphic.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="4" column="36" lean-forward="false" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -129,14 +38,11 @@
       <list>
         <option value="$PROJECT_DIR$/src/snw/engine/component/demo/normalPanel.java" />
         <option value="$PROJECT_DIR$/src/snw/engine/component/demo/NormalPanel.java" />
-        <option value="$PROJECT_DIR$/src/snw/engine/frame/EngineFrame.java" />
         <option value="$PROJECT_DIR$/src/snw/engine/game/Game.java" />
         <option value="$PROJECT_DIR$/src/snw/engine/component/TopLevelComponent.java" />
         <option value="$PROJECT_DIR$/src/snw/engine/animation/AnimationData.java" />
         <option value="$PROJECT_DIR$/src/snw/engine/database/ImageBufferData.java" />
-        <option value="$PROJECT_DIR$/src/snw/engine/core/Engine.java" />
         <option value="$PROJECT_DIR$/src/snw/engine/component/TextBox.java" />
-        <option value="$PROJECT_DIR$/src/snw/engine/database/EngineProperties.java" />
         <option value="$PROJECT_DIR$/src/snw/engine/component/MessageBox.java" />
         <option value="$PROJECT_DIR$/src/snw/engine/component/OptionBox.java" />
         <option value="$PROJECT_DIR$/src/snw/engine/component/SelectionBox.java" />
@@ -151,7 +57,12 @@
         <option value="$PROJECT_DIR$/src/snw/engine/component/MovingTextBox.java" />
         <option value="$PROJECT_DIR$/src/snw/engine/component/event/FrameEvent.java" />
         <option value="$PROJECT_DIR$/src/snw/math/VectorInt.java" />
+        <option value="$PROJECT_DIR$/src/snw/engine/component/Canvas.java" />
+        <option value="$PROJECT_DIR$/src/snw/engine/database/EngineProperties.java" />
+        <option value="$PROJECT_DIR$/src/snw/engine/frame/EngineFrame.java" />
         <option value="$PROJECT_DIR$/src/snw/engine/component/Component.java" />
+        <option value="$PROJECT_DIR$/src/snw/engine/debug/Logger.java" />
+        <option value="$PROJECT_DIR$/src/snw/engine/core/Engine.java" />
       </list>
     </option>
   </component>
@@ -229,65 +140,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="snw" type="462c0819:PsiDirectoryNode" />
               <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GameEngine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GameEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="snw" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GameEngine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GameEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="snw" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="event" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GameEngine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GameEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="snw" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="reaction" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GameEngine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GameEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="snw" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GameEngine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GameEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="snw" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GameEngine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GameEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="snw" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="debug" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GameEngine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GameEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="snw" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
               <item name="frame" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -339,9 +191,9 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -373,7 +225,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Engine">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
     <configuration name="Engine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -431,13 +290,6 @@
       <module name="GameEngine" />
       <envs />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -471,12 +323,6 @@
       </option>
       <envs />
       <patterns />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -512,6 +358,12 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
     <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.Text" />
       <item index="1" class="java.lang.String" itemvalue="Application.Engine" />
@@ -519,13 +371,16 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.ExtendText" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Engine" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Engine" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ExtendText" />
       </list>
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -539,35 +394,53 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1102" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32870865" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32765958" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3991462" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3991462" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32870865" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -580,40 +453,24 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/component/FrameComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5616">
-          <caret line="220" column="5" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="220" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/component/Component.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8478">
-          <caret line="361" column="16" lean-forward="false" selection-start-line="361" selection-start-column="16" selection-end-line="361" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/database/EngineProperties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/component/TopLevelComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="55" column="13" lean-forward="false" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/snw/engine/core/Engine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22734">
           <caret line="842" column="0" lean-forward="false" selection-start-line="842" selection-start-column="0" selection-end-line="842" selection-end-column="0" />
           <folding>
+            <element signature="e#2216#2217#0" expanded="false" />
+            <element signature="e#2249#2250#0" expanded="false" />
+            <element signature="e#7294#7295#0" expanded="false" />
+            <element signature="e#7338#7339#0" expanded="false" />
+            <element signature="e#9594#9595#0" expanded="false" />
+            <element signature="e#9638#9639#0" expanded="false" />
+            <element signature="e#14668#14669#0" expanded="false" />
+            <element signature="e#14707#14708#0" expanded="false" />
             <element signature="method#getCursorImages#0;class#Engine#0" expanded="false" />
+            <element signature="e#23161#23162#0" expanded="false" />
+            <element signature="e#23196#23197#0" expanded="false" />
+            <element signature="e#23784#23785#0" expanded="false" />
+            <element signature="e#23823#23824#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -631,7 +488,19 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#2216#2217#0" expanded="false" />
+            <element signature="e#2249#2250#0" expanded="false" />
+            <element signature="e#7294#7295#0" expanded="false" />
+            <element signature="e#7338#7339#0" expanded="false" />
+            <element signature="e#9594#9595#0" expanded="false" />
+            <element signature="e#9638#9639#0" expanded="false" />
+            <element signature="e#14668#14669#0" expanded="false" />
+            <element signature="e#14707#14708#0" expanded="false" />
             <element signature="method#getCursorImages#0;class#Engine#0" expanded="false" />
+            <element signature="e#23161#23162#0" expanded="false" />
+            <element signature="e#23196#23197#0" expanded="false" />
+            <element signature="e#23784#23785#0" expanded="false" />
+            <element signature="e#23823#23824#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -641,7 +510,19 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#2216#2217#0" expanded="false" />
+            <element signature="e#2249#2250#0" expanded="false" />
+            <element signature="e#7294#7295#0" expanded="false" />
+            <element signature="e#7338#7339#0" expanded="false" />
+            <element signature="e#9594#9595#0" expanded="false" />
+            <element signature="e#9638#9639#0" expanded="false" />
+            <element signature="e#14668#14669#0" expanded="false" />
+            <element signature="e#14707#14708#0" expanded="false" />
             <element signature="method#getCursorImages#0;class#Engine#0" expanded="false" />
+            <element signature="e#23161#23162#0" expanded="false" />
+            <element signature="e#23196#23197#0" expanded="false" />
+            <element signature="e#23784#23785#0" expanded="false" />
+            <element signature="e#23823#23824#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -651,25 +532,24 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#2216#2217#0" expanded="false" />
+            <element signature="e#2249#2250#0" expanded="false" />
+            <element signature="e#7294#7295#0" expanded="false" />
+            <element signature="e#7338#7339#0" expanded="false" />
+            <element signature="e#9594#9595#0" expanded="false" />
+            <element signature="e#9638#9639#0" expanded="false" />
+            <element signature="e#14668#14669#0" expanded="false" />
+            <element signature="e#14707#14708#0" expanded="false" />
             <element signature="method#getCursorImages#0;class#Engine#0" expanded="false" />
+            <element signature="e#23161#23162#0" expanded="false" />
+            <element signature="e#23196#23197#0" expanded="false" />
+            <element signature="e#23784#23785#0" expanded="false" />
+            <element signature="e#23823#23824#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://E:/tools/JDK/src.zip!/java/awt/Component.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="695">
-          <caret line="3118" column="19" lean-forward="true" selection-start-line="3118" selection-start-column="19" selection-end-line="3118" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/component/demo/NormalPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="24" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://E:/tools/JDK/src.zip!/java/awt/Component.java" />
     <entry file="file://$PROJECT_DIR$/src/snw/engine/component/TopLevelComponent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1350">
@@ -677,13 +557,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://E:/tools/JDK/src.zip!/java/awt/geom/AffineTransform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="473" column="11" lean-forward="false" selection-start-line="473" selection-start-column="11" selection-end-line="473" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://E:/tools/JDK/src.zip!/java/awt/geom/AffineTransform.java" />
     <entry file="file://$PROJECT_DIR$/src/snw/engine/animation/AnimationData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="678">
@@ -691,20 +565,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://E:/tools/JDK/src.zip!/java/awt/image/BufferedImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/game/GameState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://E:/tools/JDK/src.zip!/java/awt/image/BufferedImage.java" />
     <entry file="file://$PROJECT_DIR$/src/snw/engine/database/ImageBufferData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="945">
@@ -720,20 +581,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/frame/EngineFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3753">
-          <caret line="147" column="9" lean-forward="false" selection-start-line="147" selection-start-column="9" selection-end-line="147" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/tools/JDK/src.zip!/javax/imageio/ImageWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="695">
-          <caret line="574" column="25" lean-forward="false" selection-start-line="574" selection-start-column="25" selection-end-line="574" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://E:/tools/JDK/src.zip!/javax/imageio/ImageWriter.java" />
     <entry file="file://$PROJECT_DIR$/src/snw/engine/text/ExtensibleTextOld.java" />
     <entry file="file://$PROJECT_DIR$/src/snw/engine/component/BufferredImagePaintable.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -742,13 +590,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://E:/tools/JDK/src.zip!/javax/imageio/ImageIO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="1537" column="0" lean-forward="false" selection-start-line="1537" selection-start-column="0" selection-end-line="1537" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://E:/tools/JDK/src.zip!/javax/imageio/ImageIO.java" />
     <entry file="file://$PROJECT_DIR$/src/snw/structure/LengthList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -757,13 +599,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/snw/engine/component/Text.java" />
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/database/EngineProperties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="44" column="44" lean-forward="false" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/snw/engine/component/TextBox.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -806,13 +641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/text/ExtendText.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9639">
-          <caret line="407" column="26" lean-forward="false" selection-start-line="407" selection-start-column="26" selection-end-line="407" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/snw/engine/component/Button.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
@@ -834,13 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/component/Canvas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/snw/engine/audio/AudioManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-945">
@@ -853,14 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/snw/file/FileIOHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2997">
-          <caret line="118" column="33" lean-forward="false" selection-start-line="118" selection-start-column="33" selection-end-line="118" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -897,24 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/core/Engine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="841" column="35" lean-forward="true" selection-start-line="841" selection-start-column="35" selection-end-line="841" selection-end-column="35" />
-          <folding>
-            <element signature="method#getCursorImages#0;class#Engine#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/component/event/FrameEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/snw/math/VectorDbl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -939,18 +734,147 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/component/Component.java">
+    <entry file="file://$PROJECT_DIR$/src/snw/engine/component/ScrollPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="501" column="18" lean-forward="false" selection-start-line="501" selection-start-column="18" selection-end-line="501" selection-end-column="18" />
+        <state relative-caret-position="-36">
+          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/component/ScrollPanel.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/System.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="654">
+          <caret line="944" column="9" lean-forward="true" selection-start-line="944" selection-start-column="9" selection-end-line="944" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/Date.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="316" column="23" lean-forward="false" selection-start-line="316" selection-start-column="23" selection-end-line="316" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/snw/file/FileIOHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/snw/engine/component/event/FrameEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/snw/engine/component/Component.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-840">
+          <caret line="57" column="36" lean-forward="false" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="426" column="0" lean-forward="false" selection-start-line="426" selection-start-column="0" selection-end-line="426" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/snw/engine/component/Canvas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding>
+            <element signature="e#455#456#0" expanded="false" />
+            <element signature="e#499#500#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/snw/engine/text/ExtendText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8568">
+          <caret line="407" column="26" lean-forward="false" selection-start-line="407" selection-start-column="26" selection-end-line="407" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/snw/engine/core/Engine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="890" column="0" lean-forward="false" selection-start-line="890" selection-start-column="0" selection-end-line="890" selection-end-column="0" />
+          <folding>
+            <element signature="e#2216#2217#0" expanded="false" />
+            <element signature="e#2249#2250#0" expanded="false" />
+            <element signature="e#7294#7295#0" expanded="false" />
+            <element signature="e#7338#7339#0" expanded="false" />
+            <element signature="e#9594#9595#0" expanded="false" />
+            <element signature="e#9638#9639#0" expanded="false" />
+            <element signature="e#14668#14669#0" expanded="false" />
+            <element signature="e#14707#14708#0" expanded="false" />
+            <element signature="method#getCursorImages#0;class#Engine#0" expanded="false" />
+            <element signature="e#23161#23162#0" expanded="false" />
+            <element signature="e#23196#23197#0" expanded="false" />
+            <element signature="e#23784#23785#0" expanded="false" />
+            <element signature="e#23823#23824#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/snw/engine/component/demo/NormalPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#255#256#0" expanded="false" />
+            <element signature="e#333#334#0" expanded="false" />
+            <element signature="e#361#362#0" expanded="false" />
+            <element signature="e#405#406#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/snw/engine/game/GameState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding>
+            <element signature="e#525#526#0" expanded="false" />
+            <element signature="e#575#576#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/snw/engine/debug/Logger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/snw/engine/frame/EngineFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="28" column="33" lean-forward="false" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/snw/engine/database/EngineProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
         </state>
       </provider>

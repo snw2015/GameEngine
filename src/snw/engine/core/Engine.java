@@ -3,6 +3,7 @@ package snw.engine.core;
 import snw.engine.audio.AudioManager;
 import snw.engine.component.Component;
 import snw.engine.component.TopLevelComponent;
+import snw.engine.component.demo.NormalPanel;
 import snw.engine.database.*;
 import snw.engine.debug.Logger;
 import snw.engine.frame.EngineFrame;
@@ -15,6 +16,7 @@ import javax.sound.sampled.Clip;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.util.Calendar;
 import java.util.HashMap;
 
 public final class Engine {
@@ -80,7 +82,7 @@ public final class Engine {
         getGame().refocusMouse();
     }
 
-    public static void clearGame() {
+    private static void clearGame() {
         getGame().clear();
     }
 
@@ -279,7 +281,7 @@ public final class Engine {
         return getImageBufferData().attain(name);
     }
 
-    public static void clearImageBufferData() {
+    private static void clearImageBufferData() {
         getImageBufferData().clear();
     }
 
@@ -362,7 +364,7 @@ public final class Engine {
         return getAudioBufferData().attainClip(name);
     }
 
-    public static void clearAudioBufferData() {
+    private static void clearAudioBufferData() {
         getAudioBufferData().clear();
     }
 
@@ -474,7 +476,7 @@ public final class Engine {
         return ENGINE_PROPERTIES;
     }
 
-    public static void clearEngineProperties() {
+    private static void clearEngineProperties() {
         getEngineProperties().clear();
     }
 
@@ -557,7 +559,7 @@ public final class Engine {
         return ENGINE_DATA;
     }
 
-    public static void clearEngineData() {
+    private static void clearEngineData() {
         getEngineData().clear();
     }
 
@@ -706,6 +708,10 @@ public final class Engine {
         getFrame().setUndecorated(!decorated);
     }
 
+    public static void setAlwaysTop(boolean isAlwaysTop) {
+        getFrame().setAlwaysOnTop(isAlwaysTop);
+    }
+
     public static void setCursor(boolean hasCursor) {
         getFrame().setCustomCursor(hasCursor);
     }
@@ -778,7 +784,7 @@ public final class Engine {
     /*
      Engine methods
      */
-    public static void clearEngine() {
+    private static void clearEngine() {
         clearGame();
         clearImageBufferData();
         clearAudioBufferData();
@@ -813,7 +819,7 @@ public final class Engine {
         getPanel().setState(state);
     }
 
-    public static void startPainting() {
+    private static void startPainting() {
         final Thread[] threadPaint = {null};
 
         Thread threadLoop = new Thread(() -> {
@@ -832,7 +838,7 @@ public final class Engine {
         threadLoop.start();
     }
 
-    public static void startUpdating() {
+    private static void startUpdating() {
         final Thread[] threadUpdate = {null};
 
         Thread threadLoop = new Thread(() -> {
@@ -851,6 +857,10 @@ public final class Engine {
         threadLoop.start();
     }
 
+    private static void initLogger() {
+        Logger.initialize();
+    }
+
     public static void requestFocus() {
         getFrame().requestFocus();
     }
@@ -858,6 +868,7 @@ public final class Engine {
     public static void initialize() {
         clearEngine();
         System.setProperty("sun.java2d.opengl", "true");
+        initLogger();
     }
 
     public static void start() {
@@ -868,12 +879,13 @@ public final class Engine {
         requestFocus();
     }
 
-    public static void exit() {
+    public static void exit(int status) {
+        log("Exit with status " + status + ".");
+        Logger.save();
         System.exit(0);
     }
 
     public static void log(Object... objects) {
-        //TODO
         Logger.println(objects);
     }
 }

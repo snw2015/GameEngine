@@ -36,6 +36,7 @@ public class EngineProperties {
                 "!data_form      : .txt",
                 "!user_data_path : file/data/",
                 "!user_data_form : .sav",
+                "!log_path       : file/log/",
 
                 "!cursor_name    : cursor",
                 "!cursor_normal_length: 6",
@@ -44,7 +45,7 @@ public class EngineProperties {
 
                 "!default_text_font  : Serif",
                 "!default_text_size  : 20",
-                "!default_text_color : black"
+                "!default_text_color : black",
         });
         readPropertiesFile();
     }

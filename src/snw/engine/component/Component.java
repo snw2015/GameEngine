@@ -114,6 +114,8 @@ public abstract class Component {
     }
 
     private void updateEvent() {
+        if(eventList.isEmpty()) return;
+
         FrameEvent event = eventList.get(0);
         if (event != null && event.execute(frameCounter++)) {
             eventList.remove(0);

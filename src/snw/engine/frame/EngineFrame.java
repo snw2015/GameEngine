@@ -26,7 +26,7 @@ public class EngineFrame extends JFrame {
             @Override
             public void windowClosing(WindowEvent e) {
                 Engine.runNewThread(() -> {
-                    Engine.exit();
+                    Engine.exit(0);
                 });
             }
 
