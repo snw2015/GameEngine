@@ -54,8 +54,8 @@ public class MovingTextBox extends TextBox {
     }
 
     @Override
-    public void update() {
-        super.update();
+    public void refresh() {
+        super.refresh();
         if (updateSpeed != 0 && !isEnded) {
             if (++counter > 100 / updateSpeed) {
                 counter = 0;

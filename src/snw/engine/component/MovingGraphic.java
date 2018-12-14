@@ -74,8 +74,7 @@ public class MovingGraphic extends Graphic {
     }
 
     @Override
-    public void update() {
-        super.update();
+    public void refresh() {
         if (loopTime != 0 && updateSpeed >= 0 && !isStopped()) {
             if (++speedCounter >= 100 / updateSpeed) {
                 speedCounter = 0;

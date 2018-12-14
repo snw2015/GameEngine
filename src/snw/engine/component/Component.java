@@ -4,13 +4,17 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.NoninvertibleTransformException;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.List;
 
 import snw.engine.animation.Animation;
 import snw.engine.animation.AnimationData;
+import snw.engine.component.event.FrameEvent;
 import snw.engine.core.Engine;
 import snw.engine.debug.Logger;
 import snw.math.VectorDbl;
 import snw.math.VectorInt;
+import sun.swing.BakedArrayList;
 
 public abstract class Component {
     protected final String name;
@@ -46,9 +50,13 @@ public abstract class Component {
             new VectorDbl(0.5, 0), new VectorDbl(0.5, 1), new VectorDbl(0.5, 0.5)};
 
     private int alignment = ALIGNMENT_LEFTTOP;
+
+    //TODO what jb
     protected String[] preLoadImageNames = null;
     private boolean[] preLoaded = null;
 
+    private List<FrameEvent> eventList = new ArrayList();
+    private int frameCounter = 0;
 
     public Component(String name, int x, int y, int width, int height) {
         this(name, x, y, width, height, true);
@@ -99,14 +107,34 @@ public abstract class Component {
 
     public abstract void paint(Graphics2D g, AnimationData appliedData);
 
-    public void update() {
-        refresh();
+    public final void update() {
         updateAnimation();
+        updateEvent();
+        refresh();
+    }
+
+    private void updateEvent() {
+        FrameEvent event = eventList.get(0);
+        if (event != null && event.execute(frameCounter++)) {
+            eventList.remove(0);
+            frameCounter = 0;
+        }
     }
 
     public void refresh() {
     }
 
+    public void addEvent(FrameEvent e) {
+        eventList.add(e);
+    }
+
+    public void removeEvent(FrameEvent e) {
+        eventList.remove(e);
+    }
+
+    public void clearEvent() {
+        eventList.clear();
+    }
 
     public AnimationData getFinalAnimationData() {
         AnimationData finalData = new AnimationData(AffineTransform.getTranslateInstance(getAlignedX(), getAlignedY()));
@@ -458,6 +486,22 @@ public abstract class Component {
 
     public void setAlpha(float alpha) {
         this.alpha = alpha;
+    }
+
+    public class MoveEvent implements FrameEvent {
+        VectorInt destination;
+        float speed;
+
+        public MoveEvent(VectorInt destination, float speed) {
+            this.destination = destination;
+            this.speed = speed;
+        }
+
+        @Override
+        public boolean execute(int frameNum) {
+            //TODO
+            return false;
+        }
     }
 
 

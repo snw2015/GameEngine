@@ -182,9 +182,8 @@ public class FrameComponent extends Component {
     }
 
     @Override
-    public void update() {
+    public void refresh() {
         synchronized (this) {
-            super.update();
             for (Component sub : subComponents) {
                 if (sub != null) {
                     sub.update();
