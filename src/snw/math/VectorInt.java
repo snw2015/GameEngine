@@ -43,6 +43,14 @@ public class VectorInt {
         return (Math.sqrt(getNorm2()));
     }
 
+    public double getRadian() {
+        return Math.atan2(y, x);
+    }
+
+    public double getDegree() {
+        return Math.toDegrees(getRadian());
+    }
+
     public VectorInt add(VectorInt v) {
         return (new VectorInt(x + v.x, y + v.y));
     }
@@ -76,7 +84,7 @@ public class VectorInt {
      * @param height
      * @return
      */
-    public boolean inBound(int x, int y, int width, int height) {
+    public boolean inBound(double x, double y, double width, double height) {
         return (x <= this.x && y <= this.y && x + width > this.x
                 && y + height > this.y);
     }
@@ -138,6 +146,10 @@ public class VectorInt {
             return x == ((VectorInt) obj).x && y == ((VectorInt) obj).y;
         }
         return super.equals(obj);
+    }
+
+    public VectorDbl toVectorDbl() {
+        return new VectorDbl(x, y);
     }
 
     public String toString() {

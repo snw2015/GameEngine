@@ -720,6 +720,14 @@ public final class Engine {
         getFrame().setVisible(visible);
     }
 
+    public static void show() {
+        setVisible(true);
+    }
+
+    public static void hide() {
+        setVisible(false);
+    }
+
     public static void setEnable(boolean enable) {
         getFrame().setEnabled(true);
     }
@@ -875,7 +883,7 @@ public final class Engine {
         startUpdating();
         startPainting();
         setEnable(true);
-        setVisible(true);
+        show();
         requestFocus();
     }
 

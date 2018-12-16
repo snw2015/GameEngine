@@ -11,6 +11,12 @@ public class FrameComponent extends Component {
     private ArrayList<Component> subComponents = new ArrayList<>();
     private ArrayList<Integer> subPriorities = new ArrayList<>();
 
+    public static final int PRIORITY_BEHIND = -5;
+    public static final int PRIORITY_BACKGROUND = 0;
+    public static final int PRIORITY_CONTAINER = 5;
+    public static final int PRIORITY_COMPONENT = 10;
+    public static final int PRIORITY_TOP = 20;
+
     protected Component componentFocus = null;
     private int mouseX;
     private int mouseY;
@@ -45,7 +51,7 @@ public class FrameComponent extends Component {
     }
 
     public void add(Component sub) {
-        add(sub, 0);
+        add(sub, PRIORITY_COMPONENT);
     }
 
     protected boolean remove(String name) {
@@ -225,6 +231,24 @@ public class FrameComponent extends Component {
         if (componentFocus != null) {
             Component sub = componentFocus;
             sub.mouseClicked(mouseX - sub.getX(), mouseY - sub.getY());
+        }
+    }
+
+    @Override
+    public void mousePressed(int mouseX, int mouseY) {
+        refocusMouse();
+        if (componentFocus != null) {
+            Component sub = componentFocus;
+            sub.mousePressed(mouseX - sub.getX(), mouseY - sub.getY());
+        }
+    }
+
+    @Override
+    public void mouseReleased(int mouseX, int mouseY) {
+        refocusMouse();
+        if (componentFocus != null) {
+            Component sub = componentFocus;
+            sub.mouseReleased(mouseX - sub.getX(), mouseY - sub.getY());
         }
     }
 

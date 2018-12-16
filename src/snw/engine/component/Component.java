@@ -490,6 +490,11 @@ public abstract class Component {
         this.alpha = alpha;
     }
 
+    public void move(int x, int y) {
+        this.x += x;
+        this.y += y;
+    }
+
     public class MoveEvent implements FrameEvent {
         VectorInt destination;
         float speed;
