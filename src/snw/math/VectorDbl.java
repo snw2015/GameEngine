@@ -101,15 +101,27 @@ public class VectorDbl
         return minus(other).getNorm2();
     }
 
+	public VectorInt scale(double num) {
+		return new VectorInt((int) (x * num), (int) (y * num));
+	}
 
-    public static VectorDbl getRandom(double rangeX, double rangeY) {
+	public static VectorDbl getInstanceByPR(double radian, double norm) {
+    	return new VectorDbl(norm * Math.cos(radian), norm * Math.sin(radian));
+	}
+
+	public static VectorDbl getRandom(double maxNorm) {
+    	Random rnd = new Random();
+    	return getRandom(maxNorm, rnd);
+	}
+
+	public static VectorDbl getRandom(double rangeX, double rangeY) {
         Random rnd = new Random();
         return getRandom(rangeX, rangeY, rnd);
     }
 
-    public VectorInt scale(double num) {
-        return new VectorInt((int) (x * num), (int) (y * num));
-    }
+    public static VectorDbl getRandom(double maxNorm, Random rnd) {
+		return getInstanceByPR(rnd.nextDouble() % 1, rnd.nextDouble() * maxNorm);
+	}
 
     public static VectorDbl getRandom(double rangeX, double rangeY, Random rnd) {
         return new VectorDbl(rnd.nextDouble()*rangeX, rnd.nextDouble()*rangeY);
