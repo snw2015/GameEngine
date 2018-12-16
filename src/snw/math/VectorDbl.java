@@ -101,8 +101,8 @@ public class VectorDbl
         return minus(other).getNorm2();
     }
 
-	public VectorInt scale(double num) {
-		return new VectorInt((int) (x * num), (int) (y * num));
+	public VectorDbl scale(double s) {
+		return new VectorDbl(x * s, y * s);
 	}
 
 	public static VectorDbl getInstanceByPR(double radian, double norm) {
