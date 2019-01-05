@@ -35,6 +35,8 @@ public final class Engine {
         return FileIOHelper.readFile(filePath);
     }
 
+    public static boolean ensurePath(String directoryPath) {return FileIOHelper.ensurePath(directoryPath);}
+
     public static BufferedReader getFileReader(String filePath) {
         return FileIOHelper.getFileReader(filePath);
     }

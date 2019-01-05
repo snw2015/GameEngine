@@ -15,6 +15,12 @@ public class FileIOHelper {
         return new File(filePath);
     }
 
+    public static boolean ensurePath(String path) {
+        File directory = new File(path);
+
+        return(directory.mkdirs());
+    }
+
     public static BufferedReader getFileReader(String filePath) {
         FileReader reader;
         File file = readFile(filePath);

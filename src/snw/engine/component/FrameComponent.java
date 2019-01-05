@@ -230,7 +230,7 @@ public class FrameComponent extends Component {
         refocusMouse();
         if (componentFocus != null) {
             Component sub = componentFocus;
-            sub.mouseClicked(mouseX - sub.getX(), mouseY - sub.getY());
+            sub.mouseClicked(mouseX - sub.getAlignedX(), mouseY - sub.getAlignedY());
         }
     }
 
@@ -239,7 +239,7 @@ public class FrameComponent extends Component {
         refocusMouse();
         if (componentFocus != null) {
             Component sub = componentFocus;
-            sub.mousePressed(mouseX - sub.getX(), mouseY - sub.getY());
+            sub.mousePressed(mouseX - sub.getAlignedX(), mouseY - sub.getAlignedY());
         }
     }
 
@@ -248,7 +248,7 @@ public class FrameComponent extends Component {
         refocusMouse();
         if (componentFocus != null) {
             Component sub = componentFocus;
-            sub.mouseReleased(mouseX - sub.getX(), mouseY - sub.getY());
+            sub.mouseReleased(mouseX - sub.getAlignedX(), mouseY - sub.getAlignedY());
         }
     }
 

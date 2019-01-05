@@ -37,6 +37,7 @@ public class Logger {
     }
 
     public static void initialize() {
+        Engine.ensurePath(Engine.getProperty("log_path"));
         writer = Engine.getFileWriter(Engine.getProperty("log_path")
                 + Calendar.getInstance().getTime().toString().replaceAll(":", ",") + ".log");
     }
