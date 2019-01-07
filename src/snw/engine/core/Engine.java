@@ -410,6 +410,10 @@ public final class Engine {
         return getAudioManager().getCurrentBGM();
     }
 
+    public static void storeBGM(String name) {
+        getAudioManager().storeBGM(name);
+    }
+
     public static void playBGM(String name) {
         getAudioManager().playBGM(name);
     }

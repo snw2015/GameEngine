@@ -43,10 +43,6 @@ public class AudioData {
             try {
                 clip = AudioSystem.getClip();
                 clip.open(AudioSystem.getAudioInputStream(audioFile));
-                clip.addLineListener((LineEvent event) -> {
-                    if (event.getType() == LineEvent.Type.STOP)
-                        clip.close();
-                });
                 hasPrepared = true;
             } catch (Exception e) {
                 Engine.log("can't create clip");
