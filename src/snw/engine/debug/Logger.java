@@ -11,6 +11,9 @@ public class Logger {
     public static BufferedWriter writer = null;
 
     public static void print(Object... s) {
+        for (Object o : s) {
+            System.out.print(o);
+        }
         if (writer == null) return;
 
         try {
@@ -24,12 +27,15 @@ public class Logger {
     }
 
     public static void println(Object... s) {
+        for (Object o : s) {
+            System.out.println(o);
+        }
         if (writer == null) return;
 
         try {
             writer.write(Calendar.getInstance().getTime().toString() + ": \r\n");
             for (Object o : s) {
-                writer.write(o + "\r\n\r");
+                writer.write(o + "\r\n");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -48,5 +54,11 @@ public class Logger {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        save();
+        super.finalize();
     }
 }

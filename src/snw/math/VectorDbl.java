@@ -20,6 +20,11 @@ public class VectorDbl
 		this.y = y;
 	}
 
+	public VectorDbl(double[] a) {
+		this.x = a[0];
+		this.y = a[1];
+	}
+
 	public VectorDbl(VectorDbl v)
 	{
 		this.x = v.x;

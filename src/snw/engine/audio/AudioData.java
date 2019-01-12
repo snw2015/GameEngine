@@ -1,4 +1,4 @@
-package snw.engine.database;
+package snw.engine.audio;
 
 import snw.engine.core.Engine;
 
@@ -6,17 +6,18 @@ import javax.sound.sampled.*;
 import java.io.File;
 
 public class AudioData {
-    private File audioFile;
+    private AudioInputStream stream;
     private Clip clip;
 
     private boolean hasPrepared = false;
 
-    public AudioData() {
-        this(null);
+    public AudioData(Clip clip) {
+        this.clip = clip;
+        hasPrepared = true;
     }
 
-    public AudioData(File audioFile) {
-        this.audioFile = audioFile;
+    public AudioData(AudioInputStream stream) {
+        this.stream = stream;
     }
 
     /**
@@ -24,14 +25,14 @@ public class AudioData {
      */
     public boolean prepareClip() {
         boolean b = hasPrepared();
-        if (audioFile == null) return b;
+        if (stream == null) return b;
         getNewClip();
         return b;
     }
 
     public Clip getClip() {
         if (hasPrepared()) return clip;
-        if (audioFile == null) return null;
+        if (stream == null) return null;
         prepareClip();
         return clip;
     }
@@ -39,10 +40,10 @@ public class AudioData {
     public Clip getNewClip() {
         hasPrepared = false;
 
-        while (!hasPrepared||!clip.isOpen()) {
+        while (!hasPrepared || !clip.isOpen()) {
             try {
                 clip = AudioSystem.getClip();
-                clip.open(AudioSystem.getAudioInputStream(audioFile));
+                clip.open(stream);
                 hasPrepared = true;
             } catch (Exception e) {
                 Engine.log("can't create clip");
@@ -54,7 +55,7 @@ public class AudioData {
 
     public boolean releaseClip() {
         if (hasPrepared()) {
-            clip.close();
+            if(clip!=null) clip.close();
             clip = null;
             hasPrepared = false;
             return true;
@@ -62,13 +63,13 @@ public class AudioData {
         return false;
     }
 
-    public void setFile(File audioFile) {
-        this.audioFile = audioFile;
+    public void setStream(AudioInputStream stream) {
+        this.stream = stream;
         hasPrepared = false;
     }
 
-    public File getFile() {
-        return this.audioFile;
+    public AudioInputStream getStream() {
+        return this.stream;
     }
 
     public boolean hasPrepared() {
@@ -76,7 +77,15 @@ public class AudioData {
     }
 
     @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+        releaseClip();
+    }
+
+    @Override
     public String toString() {
-        return audioFile.getName();
+        return "AudioData [\n" +
+                "\t" + stream != null ? stream.toString() : "No stream" + "\n" +
+                "\tPrepared: " + hasPrepared() + "]\n";
     }
 }

@@ -1,9 +1,10 @@
 package snw.engine.core;
 
+import snw.engine.audio.AudioData;
 import snw.engine.audio.AudioManager;
+import snw.engine.audio.Decoder;
 import snw.engine.component.Component;
 import snw.engine.component.TopLevelComponent;
-import snw.engine.component.demo.NormalPanel;
 import snw.engine.database.*;
 import snw.engine.debug.Logger;
 import snw.engine.frame.EngineFrame;
@@ -12,11 +13,14 @@ import snw.engine.game.GameState;
 import snw.file.FileIOHelper;
 import snw.math.VectorInt;
 
+import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.Clip;
+import javax.swing.*;
 import java.awt.*;
+import java.awt.datatransfer.Transferable;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.util.Calendar;
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 
 public final class Engine {
@@ -35,7 +39,9 @@ public final class Engine {
         return FileIOHelper.readFile(filePath);
     }
 
-    public static boolean ensurePath(String directoryPath) {return FileIOHelper.ensurePath(directoryPath);}
+    public static boolean ensurePath(String directoryPath) {
+        return FileIOHelper.ensurePath(directoryPath);
+    }
 
     public static BufferedReader getFileReader(String filePath) {
         return FileIOHelper.getFileReader(filePath);
@@ -330,6 +336,22 @@ public final class Engine {
         return b;
     }
 
+    public static AudioInputStream getStream(String name, String format) {
+        return getAudioBufferData().getStream(name, format);
+    }
+
+    public static AudioInputStream getStream(String name) {
+        return getAudioBufferData().getStream(name);
+    }
+
+    public static boolean setDecoder(String format, Decoder decoder) {
+        return getAudioBufferData().setDecoder(format, decoder);
+    }
+
+    public static Decoder getDecoder(String format) {
+        return getAudioBufferData().getDecoder(format);
+    }
+
     public static AudioData getAudio(String name) {
         return getAudioBufferData().get(name);
     }
@@ -346,12 +368,24 @@ public final class Engine {
         return getAudioBufferData().attain(name);
     }
 
+    public static AudioData attainAudio(String name, String format) {
+        return getAudioBufferData().attain(name, format);
+    }
+
     public static Clip getClip(String name) {
         return getAudioBufferData().getClip(name);
     }
 
+    public static Clip getClip(String name, String format) {
+        return getAudioBufferData().getClip(name, format);
+    }
+
     public static Clip getNewClip(String name) {
         return getAudioBufferData().getNewClip(name);
+    }
+
+    public static Clip getNewClip(String name, String format) {
+        return getAudioBufferData().getNewClip(name, format);
     }
 
     public static Clip[] getClips(String... names) {
@@ -364,6 +398,10 @@ public final class Engine {
 
     public static Clip attainClip(String name) {
         return getAudioBufferData().attainClip(name);
+    }
+
+    public static Clip attainClip(String name, String format) {
+        return getAudioBufferData().attainClip(name, format);
     }
 
     private static void clearAudioBufferData() {
@@ -414,12 +452,24 @@ public final class Engine {
         getAudioManager().storeBGM(name);
     }
 
+    public static void storeBGM(String name, String format) {
+        getAudioManager().storeBGM(name, format);
+    }
+
     public static void playBGM(String name) {
         getAudioManager().playBGM(name);
     }
 
+    public static void playBGM(String name, String format) {
+        getAudioManager().playBGM(name, format);
+    }
+
     public static void playBGM(String name, int loopTime) {
         getAudioManager().playBGM(name, loopTime);
+    }
+
+    public static void playBGM(String name, String format, int loopTime) {
+        getAudioManager().playBGM(name, format, loopTime);
     }
 
     public static void stopBGM() {
@@ -454,6 +504,7 @@ public final class Engine {
         getAudioManager().fadeOutBGM(name, speed);
     }
 
+    //TODO see AudioManager::playSE comment
     public static void playSE(String name) {
         getAudioManager().playSE(name);
     }
@@ -740,6 +791,10 @@ public final class Engine {
 
     public static void setTitle(String title) {
         getFrame().setTitle(title);
+    }
+
+    public static void setTransferHandler(TransferHandler handler) {
+        getFrame().setTransferHandler(handler);
     }
 
     public static void resize() {

@@ -46,6 +46,8 @@ public class EngineProperties {
                 "!default_text_font  : Serif",
                 "!default_text_size  : 20",
                 "!default_text_color : black",
+
+                "!default_audio_format : wav",
         });
         readPropertiesFile();
     }

@@ -14,7 +14,6 @@ import snw.engine.core.Engine;
 import snw.engine.debug.Logger;
 import snw.math.VectorDbl;
 import snw.math.VectorInt;
-import sun.swing.BakedArrayList;
 
 public abstract class Component {
     protected final String name;

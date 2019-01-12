@@ -1,7 +1,6 @@
 package snw.engine.audio;
 
 import snw.engine.core.Engine;
-import snw.engine.database.AudioData;
 
 import javax.sound.sampled.*;
 import java.io.File;
@@ -65,12 +64,25 @@ public class AudioManager {
         return currentBGM;
     }
 
+    public void storeBGM(String name, String format) {
+        AudioData audio = Engine.attainAudio(name, format);
+        if (!BGMList.contains(name)) {
+            audio.getClip().addLineListener(new BGMLineListener());
+            BGMList.add(name);
+        }
+    }
+
     public void storeBGM(String name) {
         AudioData audio = Engine.attainAudio(name);
         if (!BGMList.contains(name)) {
             audio.getClip().addLineListener(new BGMLineListener());
             BGMList.add(name);
         }
+    }
+
+    public void storeBGM(String name, String format, int loopStart, int loopEnd) {
+        storeBGM(name, format);
+        Engine.getClip(name).setLoopPoints(loopStart, loopEnd);
     }
 
     public void storeBGM(String name, int loopStart, int loopEnd) {
@@ -89,11 +101,33 @@ public class AudioManager {
         playBGM(name, -1);
     }
 
+    public void playBGM(String name, String format) {
+        playBGM(name, format, -1);
+    }
+
     public void playBGM(String name, int loopTime) {
         if (loopTime == 0 || !BGMList.contains(name)) return;
         stopBGM();
 
         Clip clipBGM = Engine.getClip(name);
+        setClipVol(clipBGM, BGMVol * masterVol);
+
+        currentBGM = name;
+
+        clipBGM.setFramePosition(0);
+
+        if (loopTime > 0) {
+            clipBGM.loop(loopTime - 1);
+        } else {
+            clipBGM.loop(Clip.LOOP_CONTINUOUSLY);
+        }
+    }
+
+    public void playBGM(String name, String format, int loopTime) {
+        if (loopTime == 0 || !BGMList.contains(name)) return;
+        stopBGM();
+
+        Clip clipBGM = Engine.getClip(name, format);
         setClipVol(clipBGM, BGMVol * masterVol);
 
         currentBGM = name;
@@ -194,6 +228,7 @@ public class AudioManager {
         threadControl.start();
     }
 
+    //TODO Consider a new way to handle format parameters
     public void playSE(String name) {
         playSE(name, 1);
     }
@@ -204,6 +239,7 @@ public class AudioManager {
         Clip clipSE = Engine.getNewClip(name);
         //Edit: I found that you should open a new File otherwise you can't play the same sound simultaneously
         // (at lease can't play it with a short interval), sigh
+        //Edit 2019/1/7: Maybe just a new stream, it's worth trying
         //TODO due to the reason above, this class and the AudioBufferData should be restructured
 
         setClipVol(clipSE, SEVol * masterVol);

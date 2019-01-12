@@ -1,8 +1,9 @@
 package snw.math;
 
-import java.awt.Rectangle;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Vector;
 
 public class VectorInt {
     public final static VectorInt UP = new VectorInt(0, -1);
@@ -28,6 +29,11 @@ public class VectorInt {
     public VectorInt(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+
+    public VectorInt(int[] a) {
+        this.x = a[0];
+        this.y = a[1];
     }
 
     public VectorInt(VectorInt v) {
@@ -138,6 +144,26 @@ public class VectorInt {
         VectorInt[] a = new VectorInt[0];
 
         return surround.toArray(a);
+    }
+
+    public static Rectangle getRectangle(VectorInt v1, VectorInt v2) {
+        int x, y, width, height;
+        if(v1.x < v2.x) {
+            x = v1.x;
+            width = v2.x - v1.x;
+        } else {
+            x = v2.x;
+            width = v1.x - v2.x;
+        }
+        if(v1.y < v2.y) {
+            y = v1.y;
+            height = v2.y - v1.y;
+        } else {
+            y = v2.y;
+            height = v1.y - v2.y;
+        }
+
+        return new Rectangle(x, y, width, height);
     }
 
     @Override

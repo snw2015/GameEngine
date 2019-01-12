@@ -65,35 +65,35 @@ public class EngineData {
 
 
     public boolean set(String name, long value) {
-        return set(name, new Long(value));
+        return set(name, Long.valueOf(value));
     }
 
     public boolean set(String name, int value) {
-        return set(name, new Integer(value));
+        return set(name, Integer.valueOf(value));
     }
 
     public boolean set(String name, short value) {
-        return set(name, new Short(value));
+        return set(name, Short.valueOf(value));
     }
 
     public boolean set(String name, char value) {
-        return set(name, new Character(value));
+        return set(name, Character.valueOf(value));
     }
 
     public boolean set(String name, byte value) {
-        return set(name, new Byte(value));
+        return set(name, Byte.valueOf(value));
     }
 
     public boolean set(String name, double value) {
-        return set(name, new Double(value));
+        return set(name, Double.valueOf(value));
     }
 
     public boolean set(String name, float value) {
-        return set(name, new Float(value));
+        return set(name, Float.valueOf(value));
     }
 
     public boolean set(String name, boolean value) {
-        return set(name, new Boolean(value));
+        return set(name, Boolean.valueOf(value));
     }
 
 

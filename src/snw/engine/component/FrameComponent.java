@@ -45,7 +45,7 @@ public class FrameComponent extends Component {
                 }
             }
 
-            subPriorities.add(index, new Integer(priority));
+            subPriorities.add(index, Integer.valueOf(priority));
             subComponents.add(index, sub);
         }
     }
