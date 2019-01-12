@@ -20,7 +20,7 @@
       <file leaf-file-name="AudioManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/snw/engine/audio/AudioManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="5976">
               <caret line="287" column="5" lean-forward="false" selection-start-line="287" selection-start-column="5" selection-end-line="287" selection-end-column="5" />
               <folding />
             </state>
@@ -30,8 +30,8 @@
       <file leaf-file-name="Engine.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/snw/engine/core/Engine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="740" column="47" lean-forward="false" selection-start-line="740" selection-start-column="47" selection-end-line="740" selection-end-column="47" />
+            <state relative-caret-position="528">
+              <caret line="810" column="18" lean-forward="false" selection-start-line="810" selection-start-column="18" selection-end-line="810" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1274#1275#0" expanded="true" />
@@ -54,14 +54,12 @@
                 <element signature="e#12099#12100#0" expanded="true" />
                 <element signature="e#12791#12792#0" expanded="true" />
                 <element signature="e#12840#12841#0" expanded="true" />
-                <element signature="e#22014#22015#0" expanded="true" />
-                <element signature="e#22075#22076#0" expanded="true" />
-                <element signature="e#22141#22142#0" expanded="true" />
-                <element signature="e#22203#22204#0" expanded="true" />
-                <element signature="e#22264#22265#0" expanded="true" />
-                <element signature="e#22322#22323#0" expanded="true" />
-                <element signature="e#26452#26453#0" expanded="true" />
-                <element signature="e#26491#26492#0" expanded="true" />
+                <element signature="e#22028#22029#0" expanded="true" />
+                <element signature="e#22089#22090#0" expanded="true" />
+                <element signature="e#22292#22293#0" expanded="true" />
+                <element signature="e#22350#22351#0" expanded="true" />
+                <element signature="e#26480#26481#0" expanded="true" />
+                <element signature="e#26519#26520#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,7 +68,7 @@
       <file leaf-file-name="EngineFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/snw/engine/frame/EngineFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="4896">
               <caret line="206" column="0" lean-forward="false" selection-start-line="206" selection-start-column="0" selection-end-line="237" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -230,8 +228,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -326,8 +325,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -826,9 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2058">
           <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -927,7 +922,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/snw/engine/audio/AudioManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="5976">
           <caret line="287" column="5" lean-forward="false" selection-start-line="287" selection-start-column="5" selection-end-line="287" selection-end-column="5" />
           <folding />
         </state>
@@ -945,13 +940,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-24360">
           <caret line="87" column="13" lean-forward="false" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/snw/engine/frame/EngineFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="4896">
           <caret line="206" column="0" lean-forward="false" selection-start-line="206" selection-start-column="0" selection-end-line="237" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -967,14 +961,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="2502" column="26" lean-forward="false" selection-start-line="2502" selection-start-column="26" selection-end-line="2502" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/snw/engine/core/Engine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="740" column="47" lean-forward="false" selection-start-line="740" selection-start-column="47" selection-end-line="740" selection-end-column="47" />
+        <state relative-caret-position="528">
+          <caret line="810" column="18" lean-forward="false" selection-start-line="810" selection-start-column="18" selection-end-line="810" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1274#1275#0" expanded="true" />
@@ -997,14 +990,12 @@
             <element signature="e#12099#12100#0" expanded="true" />
             <element signature="e#12791#12792#0" expanded="true" />
             <element signature="e#12840#12841#0" expanded="true" />
-            <element signature="e#22014#22015#0" expanded="true" />
-            <element signature="e#22075#22076#0" expanded="true" />
-            <element signature="e#22141#22142#0" expanded="true" />
-            <element signature="e#22203#22204#0" expanded="true" />
-            <element signature="e#22264#22265#0" expanded="true" />
-            <element signature="e#22322#22323#0" expanded="true" />
-            <element signature="e#26452#26453#0" expanded="true" />
-            <element signature="e#26491#26492#0" expanded="true" />
+            <element signature="e#22028#22029#0" expanded="true" />
+            <element signature="e#22089#22090#0" expanded="true" />
+            <element signature="e#22292#22293#0" expanded="true" />
+            <element signature="e#22350#22351#0" expanded="true" />
+            <element signature="e#26480#26481#0" expanded="true" />
+            <element signature="e#26519#26520#0" expanded="true" />
           </folding>
         </state>
       </provider>

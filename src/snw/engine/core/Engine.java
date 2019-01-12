@@ -795,19 +795,19 @@ public final class Engine {
         getFrame().setTitle(title);
     }
 
-    public boolean addTransferHandler(String name, TransferHandler handler) {
+    public static boolean addTransferHandler(String name, TransferHandler handler) {
         return getFrame().addTransferHandler(name, handler);
     }
 
-    public boolean removeTransferHandler(String name) {
+    public static boolean removeTransferHandler(String name) {
         return getFrame().removeTransferHandler(name);
     }
 
-    public java.util.List<String> getTransferHandlerNameList() {
+    public static java.util.List<String> getTransferHandlerNameList() {
         return getFrame().getTransferHandlerNameList();
     }
 
-    public List<TransferHandler> getTransferHandlerList() {
+    public static List<TransferHandler> getTransferHandlerList() {
         return getFrame().getTransferHandlerList();
     }
 
