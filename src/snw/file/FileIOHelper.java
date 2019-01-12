@@ -6,11 +6,10 @@ import snw.engine.core.Engine;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 public class FileIOHelper {
-
-
     public static File readFile(String filePath) {
         return new File(filePath);
     }
@@ -137,5 +136,30 @@ public class FileIOHelper {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static String getFileNameStripped(File file) {
+        String name = file.getName();
+        String strippedName = name;
+        int index = name.indexOf('.');
+
+        while(index >= 0) {
+            strippedName = name.substring(0, index);
+            index = name.indexOf('.', index + 1);
+        }
+
+        return strippedName;
+    }
+
+    public static String getFileNameExtension(File file) {
+        String extension = file.getName();
+        int index = extension.indexOf('.');
+
+        while(index >= 0) {
+            extension = extension.substring(index + 1);
+            index = extension.indexOf('.');
+        }
+
+        return extension;
     }
 }
