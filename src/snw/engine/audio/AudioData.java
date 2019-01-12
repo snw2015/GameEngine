@@ -3,7 +3,6 @@ package snw.engine.audio;
 import snw.engine.core.Engine;
 
 import javax.sound.sampled.*;
-import java.io.File;
 
 public class AudioData {
     private AudioInputStream stream;
@@ -55,7 +54,15 @@ public class AudioData {
 
     public boolean releaseClip() {
         if (hasPrepared()) {
-            if(clip!=null) clip.close();
+            if(clip!=null) {
+                if(clip.isOpen()) {
+                    if (clip.isRunning()) {
+                        clip.stop();
+                    }
+                    clip.close();
+                }
+            }
+
             clip = null;
             hasPrepared = false;
             return true;
@@ -74,12 +81,6 @@ public class AudioData {
 
     public boolean hasPrepared() {
         return hasPrepared;
-    }
-
-    @Override
-    protected void finalize() throws Throwable {
-        super.finalize();
-        releaseClip();
     }
 
     @Override
