@@ -4,15 +4,20 @@ import snw.engine.animation.AnimationData;
 import snw.engine.component.TopLevelComponent;
 import snw.engine.core.Engine;
 
+import java.util.List;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class EngineFrame extends JFrame {
     final TopLevelComponent panel = Engine.getPanel();
     final ContentPanel contentPanel = new ContentPanel();
+    private final List<String> handlerNameList = new ArrayList<>();
+    private final List<TransferHandler> handlerList = new ArrayList<>();
 
     public EngineFrame() {
         add(contentPanel);
@@ -77,6 +82,8 @@ public class EngineFrame extends JFrame {
                 });
             }
         });
+
+        setTransferHandler(new MainTransferHandler());
     }
 
     private class ContentPanel extends JPanel {
@@ -152,6 +159,26 @@ public class EngineFrame extends JFrame {
         }
     }
 
+    private class MainTransferHandler extends TransferHandler {
+        @Override
+        public boolean canImport(TransferSupport support) {
+            for (TransferHandler handler : handlerList) {
+                if (handler.canImport(support)) return true;
+            }
+
+            return false;
+        }
+
+        @Override
+        public boolean importData(TransferSupport support) {
+            for (TransferHandler handler : handlerList) {
+                if (handler.canImport(support) && handler.importData(support)) return true;
+            }
+
+            return false;
+        }
+    }
+
     public void setCustomCursor(boolean isCustom) {
         if (isCustom) {
             setCursor(getToolkit().createCustomCursor(
@@ -168,6 +195,48 @@ public class EngineFrame extends JFrame {
         super.requestFocus();
         contentPanel.requestFocus();
     }*/
+
+    /**
+     * If a handler with the same name has been in the list, it will be removed,
+     * and the new one will be added to the end of the list
+     *
+     * @param name
+     * @param handler
+     * @return <tt>true<tt/> if overwritten
+     */
+    public boolean addTransferHandler(String name, TransferHandler handler) {
+        boolean contains = false;
+
+        if (handlerNameList.contains(name)) {
+            removeTransferHandler(name);
+            contains = true;
+        }
+
+        handlerNameList.add(name);
+        handlerList.add(handler);
+
+        return contains;
+    }
+
+    public boolean removeTransferHandler(String name) {
+        if (!handlerNameList.contains(name)) return false;
+
+        int index = handlerNameList.indexOf(name);
+
+        handlerNameList.remove(index);
+        handlerList.remove(index);
+
+        return true;
+    }
+
+    public List<String> getTransferHandlerNameList() {
+        return new ArrayList<>(handlerNameList);
+    }
+
+    public List<TransferHandler> getTransferHandlerList() {
+        return new ArrayList<>(handlerList);
+    }
+
 
     public void resize() {
         contentPanel.resize();

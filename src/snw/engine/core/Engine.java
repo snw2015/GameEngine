@@ -17,11 +17,11 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.datatransfer.Transferable;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
+import java.util.List;
 
 public final class Engine {
     private static Game GAME;
@@ -723,20 +723,22 @@ public final class Engine {
         String className = list[0].trim();
         String reloadData = list[1].trim();
         Class c = null;
+        Reloadable obj = null;
         try {
             c = Class.forName(className);
+            //obj = (Reloadable) c.newInstance();
+            obj = (Reloadable) c.getDeclaredConstructor().newInstance();
         } catch (ClassNotFoundException e) {
             //TODO
             e.printStackTrace();
-        }
-
-        Reloadable obj = null;
-        try {
-            obj = (Reloadable) c.newInstance();
         } catch (InstantiationException e) {
             //TODO
             e.printStackTrace();
         } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
 
@@ -793,8 +795,20 @@ public final class Engine {
         getFrame().setTitle(title);
     }
 
-    public static void setTransferHandler(TransferHandler handler) {
-        getFrame().setTransferHandler(handler);
+    public boolean addTransferHandler(String name, TransferHandler handler) {
+        return getFrame().addTransferHandler(name, handler);
+    }
+
+    public boolean removeTransferHandler(String name) {
+        return getFrame().removeTransferHandler(name);
+    }
+
+    public java.util.List<String> getTransferHandlerNameList() {
+        return getFrame().getTransferHandlerNameList();
+    }
+
+    public List<TransferHandler> getTransferHandlerList() {
+        return getFrame().getTransferHandlerList();
     }
 
     public static void resize() {
