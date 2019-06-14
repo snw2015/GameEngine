@@ -194,14 +194,14 @@ public abstract class Component {
     public void keyReleased(int key) {
     }
 
-    public void mouseClicked(int mouseX, int mouseY) {
+    public void mouseClicked(double mouseX, double mouseY) {
         //println("click on " + name);
     }
 
-    public void mousePressed(int mouseX, int mouseY) {
+    public void mousePressed(double mouseX, double mouseY) {
     }
 
-    public void mouseReleased(int mouseX, int mouseY) {
+    public void mouseReleased(double mouseX, double mouseY) {
     }
 
     public void mouseEntered() {
@@ -212,11 +212,11 @@ public abstract class Component {
         //println("move out of " + name);
     }
 
-    public boolean mouseMoved(int mouseX, int mouseY) {
+    public boolean mouseMoved(double mouseX, double mouseY) {
         return false;
     }
 
-    public void mouseDragged(int mouseX, int mouseY) {
+    public void mouseDragged(double mouseX, double mouseY) {
     }
 
     public void setPaintedPosition(int startX, int startY) {
@@ -368,15 +368,15 @@ public abstract class Component {
         return new VectorInt((int) newPoint[0], (int) newPoint[1]);
     }
 
-    public VectorInt getInverseTransformedPos(int x, int y) {
-        if (animationData == null) return new VectorInt(x, y);
+    public VectorDbl getInverseTransformedPos(double x, double y) {
+        if (animationData == null) return new VectorDbl(x, y);
         double[] newPoint = new double[2];
         try {
             animationData.getTransformation().inverseTransform(new double[]{x, y}, 0, newPoint, 0, 1);
         } catch (NoninvertibleTransformException e) {
             e.printStackTrace();
         }
-        return new VectorInt((int) newPoint[0], (int) newPoint[1]);
+        return new VectorDbl(newPoint[0], newPoint[1]);
     }
 
     public int getWidth() {

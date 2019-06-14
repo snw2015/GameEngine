@@ -4,6 +4,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 import snw.engine.animation.AnimationData;
+import snw.math.VectorDbl;
 import snw.math.VectorInt;
 
 public class FrameComponent extends Component {
@@ -18,8 +19,8 @@ public class FrameComponent extends Component {
     public static final int PRIORITY_TOP = 20;
 
     protected Component componentFocus = null;
-    private int mouseX;
-    private int mouseY;
+    private double mouseX;
+    private double mouseY;
 
     public FrameComponent(String name, int x, int y, int width, int height, boolean focusable) {
         super(name, x, y, width, height, focusable);
@@ -226,7 +227,7 @@ public class FrameComponent extends Component {
     }
 
     @Override
-    public void mouseClicked(int mouseX, int mouseY) {
+    public void mouseClicked(double mouseX, double mouseY) {
         refocusMouse();
         if (componentFocus != null) {
             Component sub = componentFocus;
@@ -235,7 +236,7 @@ public class FrameComponent extends Component {
     }
 
     @Override
-    public void mousePressed(int mouseX, int mouseY) {
+    public void mousePressed(double mouseX, double mouseY) {
         refocusMouse();
         if (componentFocus != null) {
             Component sub = componentFocus;
@@ -244,7 +245,7 @@ public class FrameComponent extends Component {
     }
 
     @Override
-    public void mouseReleased(int mouseX, int mouseY) {
+    public void mouseReleased(double mouseX, double mouseY) {
         refocusMouse();
         if (componentFocus != null) {
             Component sub = componentFocus;
@@ -253,7 +254,7 @@ public class FrameComponent extends Component {
     }
 
     @Override
-    public boolean mouseMoved(int mouseX, int mouseY) {
+    public boolean mouseMoved(double mouseX, double mouseY) {
         this.mouseX = mouseX;
         this.mouseY = mouseY;
         return refocusMouse();
@@ -277,7 +278,8 @@ public class FrameComponent extends Component {
                     componentFocus = sub;
                 }
 
-                VectorInt mousePos = sub.getInverseTransformedPos(mouseX - sub.getAlignedX(), mouseY - sub.getAlignedY());
+                VectorDbl mousePos = sub.getInverseTransformedPos(
+                        mouseX - sub.getAlignedX(), mouseY - sub.getAlignedY());
                 sub.mouseMoved(mousePos.x, mousePos.y);
 
                 return (changed);
@@ -303,7 +305,7 @@ public class FrameComponent extends Component {
     }
 
     @Override
-    public void mouseDragged(int mouseX, int mouseY) {
+    public void mouseDragged(double mouseX, double mouseY) {
         if (componentFocus != null) {
             componentFocus.mouseDragged(mouseX - componentFocus.getAlignedX(),
                     mouseY - componentFocus.getAlignedY());
