@@ -14,97 +14,94 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_src/test/TestFrame.java">
+        <entry file="file://$PROJECT_DIR$/src/snw/engine/core/Engine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="39" column="33" lean-forward="true" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+            <state relative-caret-position="161">
+              <caret line="471" column="28" lean-forward="true" selection-start-line="471" selection-start-column="28" selection-end-line="471" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1274#1275#0" expanded="true" />
+                <element signature="e#1335#1336#0" expanded="true" />
+                <element signature="e#8987#8988#0" expanded="true" />
+                <element signature="e#9046#9047#0" expanded="true" />
+                <element signature="e#9244#9245#0" expanded="true" />
+                <element signature="e#9306#9307#0" expanded="true" />
+                <element signature="e#9717#9718#0" expanded="true" />
+                <element signature="e#9773#9774#0" expanded="true" />
+                <element signature="e#9955#9956#0" expanded="true" />
+                <element signature="e#10012#10013#0" expanded="true" />
+                <element signature="e#10074#10075#0" expanded="true" />
+                <element signature="e#10139#10140#0" expanded="true" />
+                <element signature="e#10314#10315#0" expanded="true" />
+                <element signature="e#10382#10383#0" expanded="true" />
+                <element signature="e#11932#11933#0" expanded="true" />
+                <element signature="e#11980#11981#0" expanded="true" />
+                <element signature="e#12338#12339#0" expanded="true" />
+                <element signature="e#12394#12395#0" expanded="true" />
+                <element signature="e#12455#12456#0" expanded="true" />
+                <element signature="e#12511#12512#0" expanded="true" />
+                <element signature="e#12791#12792#0" expanded="true" />
+                <element signature="e#12840#12841#0" expanded="true" />
+                <element signature="e#22028#22029#0" expanded="true" />
+                <element signature="e#22089#22090#0" expanded="true" />
+                <element signature="e#22292#22293#0" expanded="true" />
+                <element signature="e#22350#22351#0" expanded="true" />
+                <element signature="e#26480#26481#0" expanded="true" />
+                <element signature="e#26519#26520#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/snw/structure/BufferData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+              <folding>
+                <element signature="e#1911#1912#0" expanded="true" />
+                <element signature="e#1956#1957#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/snw/engine/component/bounding/CircleBoundChecker.java">
+        <entry file="file://$PROJECT_DIR$/src/snw/engine/audio/AudioManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/snw/engine/component/TopLevelComponent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/snw/engine/component/Component.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="151" column="14" selection-start-line="151" selection-start-column="14" selection-end-line="151" selection-end-column="14" />
+            <state relative-caret-position="160">
+              <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
               <folding>
-                <element signature="e#4359#4360#0" expanded="true" />
-                <element signature="e#4439#4440#0" expanded="true" />
-                <element signature="e#4504#4505#0" expanded="true" />
-                <element signature="e#4361#4362#0" expanded="true" />
-                <element signature="e#4411#4412#0" expanded="true" />
-                <element signature="e#6018#6019#0" expanded="true" />
-                <element signature="e#6364#6365#0" expanded="true" />
-                <element signature="e#7000#7001#0" expanded="true" />
-                <element signature="e#7194#7195#0" expanded="true" />
-                <element signature="e#7274#7275#0" expanded="true" />
-                <element signature="e#7323#7324#0" expanded="true" />
-                <element signature="e#7398#7399#0" expanded="true" />
-                <element signature="e#7534#7535#0" expanded="true" />
-                <element signature="e#7609#7610#0" expanded="true" />
-                <element signature="e#7773#7774#0" expanded="true" />
-                <element signature="e#8013#8014#0" expanded="true" />
-                <element signature="e#8777#8778#0" expanded="true" />
-                <element signature="e#9528#9529#0" expanded="true" />
-                <element signature="e#11375#11376#0" expanded="true" />
-                <element signature="e#11454#11455#0" expanded="true" />
-                <element signature="e#12842#12843#0" expanded="true" />
-                <element signature="e#13058#13059#0" expanded="true" />
-                <element signature="e#13411#13412#0" expanded="true" />
-                <element signature="e#13508#13509#0" expanded="true" />
-                <element signature="e#13574#13575#0" expanded="true" />
-                <element signature="e#13639#13640#0" expanded="true" />
-                <element signature="e#13753#13754#0" expanded="true" />
-                <element signature="e#13825#13826#0" expanded="true" />
-                <element signature="e#13940#13941#0" expanded="true" />
-                <element signature="e#14012#14013#0" expanded="true" />
-                <element signature="e#14195#14196#0" expanded="true" />
-                <element signature="e#14284#14285#0" expanded="true" />
-                <element signature="e#14346#14347#0" expanded="true" />
-                <element signature="e#14431#14432#0" expanded="true" />
-                <element signature="e#14499#14500#0" expanded="true" />
-                <element signature="e#14582#14583#0" expanded="true" />
-                <element signature="e#14697#14698#0" expanded="true" />
-                <element signature="e#15066#15067#0" expanded="true" />
-                <element signature="e#16086#16087#0" expanded="true" />
-                <element signature="e#16113#16114#0" expanded="true" />
-                <element signature="e#16157#16158#0" expanded="true" />
-                <element signature="e#16194#16195#0" expanded="true" />
-                <element signature="e#16240#16241#0" expanded="true" />
-                <element signature="e#16279#16280#0" expanded="true" />
+                <element signature="e#2485#2486#0" expanded="true" />
+                <element signature="e#2518#2519#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/snw/engine/component/FrameComponent.java">
+        <entry file="file://$PROJECT_DIR$/src/snw/engine/audio/AudioData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="270" column="10" selection-start-line="270" selection-start-column="10" selection-end-line="270" selection-end-column="10" />
+            <state relative-caret-position="300">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
               <folding>
-                <element signature="e#9637#9638#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1773#1774#0" expanded="true" />
+                <element signature="e#1807#1808#0" expanded="true" />
+                <element signature="e#1843#1844#0" expanded="true" />
+                <element signature="e#1877#1878#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/snw/engine/audio/Decoder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -147,16 +144,12 @@
         <option value="$PROJECT_DIR$/src/snw/engine/debug/Logger.java" />
         <option value="$PROJECT_DIR$/src/snw/engine/audio/Decoder.java" />
         <option value="$PROJECT_DIR$/src/snw/engine/database/EngineData.java" />
-        <option value="$PROJECT_DIR$/src/snw/engine/audio/AudioManager.java" />
         <option value="$PROJECT_DIR$/src/snw/engine/game/GameState.java" />
         <option value="$PROJECT_DIR$/src/snw/engine/audio/WAVOGGDecoder.java" />
-        <option value="$PROJECT_DIR$/src/snw/engine/database/AudioBufferData.java" />
         <option value="$PROJECT_DIR$/src/snw/math/VectorInt.java" />
         <option value="$PROJECT_DIR$/src/snw/math/VectorDbl.java" />
-        <option value="$PROJECT_DIR$/src/snw/engine/core/Engine.java" />
         <option value="$PROJECT_DIR$/src/snw/file/FileIOHelper.java" />
         <option value="$PROJECT_DIR$/src/snw/engine/frame/EngineFrame.java" />
-        <option value="$PROJECT_DIR$/src/snw/engine/audio/AudioData.java" />
         <option value="$PROJECT_DIR$/src/snw/engine/component/bounding/BoundChecker.java" />
         <option value="$PROJECT_DIR$/src/snw/engine/component/ListPanel.java" />
         <option value="$PROJECT_DIR$/src/snw/engine/component/Button.java" />
@@ -169,14 +162,18 @@
         <option value="$PROJECT_DIR$/test_src/test/TestFrame.java" />
         <option value="$PROJECT_DIR$/src/snw/engine/component/FrameComponent.java" />
         <option value="$PROJECT_DIR$/src/snw/engine/component/bounding/CircleBoundChecker.java" />
+        <option value="$PROJECT_DIR$/src/snw/engine/database/AudioBufferData.java" />
+        <option value="$PROJECT_DIR$/src/snw/engine/audio/AudioData.java" />
+        <option value="$PROJECT_DIR$/src/snw/engine/core/Engine.java" />
+        <option value="$PROJECT_DIR$/src/snw/engine/audio/AudioManager.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-12" />
     <option name="y" value="-12" />
-    <option name="width" value="1943" />
-    <option name="height" value="1103" />
+    <option name="width" value="1944" />
+    <option name="height" value="1104" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -185,7 +182,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -219,6 +215,22 @@
             <path>
               <item name="GameEngine" type="b2602c69:ProjectViewProjectNode" />
               <item name="GameEngine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="snw" type="462c0819:PsiDirectoryNode" />
+              <item name="engine" type="462c0819:PsiDirectoryNode" />
+              <item name="audio" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GameEngine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GameEngine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="snw" type="462c0819:PsiDirectoryNode" />
+              <item name="engine" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GameEngine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GameEngine" type="462c0819:PsiDirectoryNode" />
               <item name="test_src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -231,6 +243,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -242,20 +255,20 @@
     <property name="SearchEverywhereHistoryKey" value="getDeclaredConstructor&#9;PSI&#9;JAVA://java.lang.Class#getDeclaredConstructor&#10;newInstance&#9;PSI&#9;JAVA://java.lang.Class#newInstance&#10;storeBG&#9;PSI&#9;JAVA://snw.engine.audio.AudioManager#storeBGM" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="E:/downloads/GUIGameEngine-56523773ebd2be06b13964aa93e05cca75f4098e/GUIGameEngine/src/snw" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.excludes" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\respository\GameEngine\test_src" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\respository\GameEngine" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="snw.engine.component" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\respository\GameEngine" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\respository\GameEngine\test_src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -418,7 +431,6 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Image Layers" order="6" />
-      <window_info anchor="bottom" id="Services" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.34087238" />
@@ -429,8 +441,8 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32978722" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32956383" />
-      <window_info anchor="right" id="Ant" />
+      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.32956383" />
+      <window_info anchor="bottom" id="Services" order="11" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -440,6 +452,7 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info anchor="right" id="Palette" order="8" />
+      <window_info anchor="right" id="Ant" order="9" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -497,24 +510,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/audio/Decoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/snw/engine/game/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1320">
           <caret line="69" column="36" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/audio/WAVOGGDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="73" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="73" />
         </state>
       </provider>
     </entry>
@@ -542,84 +541,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/audio/AudioManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="146" column="5" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/snw/structure/BufferData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="33" column="50" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/database/AudioBufferData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="136" column="22" selection-start-line="136" selection-start-column="22" selection-end-line="136" selection-end-column="22" />
-          <folding>
-            <element signature="e#3098#3099#0" expanded="true" />
-            <element signature="e#3159#3160#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10/lib/src.zip!/java.base/java/lang/Object.java" />
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/audio/AudioData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#359#360#0" expanded="true" />
-            <element signature="e#395#396#0" expanded="true" />
-            <element signature="e#1773#1774#0" expanded="true" />
-            <element signature="e#1807#1808#0" expanded="true" />
-            <element signature="e#1843#1844#0" expanded="true" />
-            <element signature="e#1877#1878#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/core/Engine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14352">
-          <caret line="810" column="18" selection-start-line="810" selection-start-column="18" selection-end-line="810" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1274#1275#0" expanded="true" />
-            <element signature="e#1335#1336#0" expanded="true" />
-            <element signature="e#8987#8988#0" expanded="true" />
-            <element signature="e#9046#9047#0" expanded="true" />
-            <element signature="e#9244#9245#0" expanded="true" />
-            <element signature="e#9306#9307#0" expanded="true" />
-            <element signature="e#9717#9718#0" expanded="true" />
-            <element signature="e#9773#9774#0" expanded="true" />
-            <element signature="e#9955#9956#0" expanded="true" />
-            <element signature="e#10012#10013#0" expanded="true" />
-            <element signature="e#10074#10075#0" expanded="true" />
-            <element signature="e#10139#10140#0" expanded="true" />
-            <element signature="e#10314#10315#0" expanded="true" />
-            <element signature="e#10382#10383#0" expanded="true" />
-            <element signature="e#11932#11933#0" expanded="true" />
-            <element signature="e#11980#11981#0" expanded="true" />
-            <element signature="e#12043#12044#0" expanded="true" />
-            <element signature="e#12099#12100#0" expanded="true" />
-            <element signature="e#12791#12792#0" expanded="true" />
-            <element signature="e#12840#12841#0" expanded="true" />
-            <element signature="e#22028#22029#0" expanded="true" />
-            <element signature="e#22089#22090#0" expanded="true" />
-            <element signature="e#22292#22293#0" expanded="true" />
-            <element signature="e#22350#22351#0" expanded="true" />
-            <element signature="e#26480#26481#0" expanded="true" />
-            <element signature="e#26519#26520#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/tools/java/jdk-12/lib/src.zip!/java.desktop/java/awt/Rectangle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
@@ -739,7 +661,21 @@
     <entry file="file://$PROJECT_DIR$/test_src/test/TestFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
-          <caret line="39" column="33" lean-forward="true" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+          <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/snw/engine/component/bounding/CircleBoundChecker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/snw/engine/component/TopLevelComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
@@ -801,22 +737,108 @@
         <state relative-caret-position="118">
           <caret line="270" column="10" selection-start-line="270" selection-start-column="10" selection-end-line="270" selection-end-column="10" />
           <folding>
+            <element signature="e#9608#9609#0" expanded="true" />
             <element signature="e#9637#9638#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/component/TopLevelComponent.java">
+    <entry file="file://$PROJECT_DIR$/src/snw/engine/audio/WAVOGGDecoder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="380">
+          <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/snw/engine/component/bounding/CircleBoundChecker.java">
+    <entry file="file://$PROJECT_DIR$/src/snw/engine/audio/Decoder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="120">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/snw/engine/database/AudioBufferData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="91" column="16" selection-start-line="91" selection-start-column="16" selection-end-line="91" selection-end-column="16" />
+          <folding>
+            <element signature="e#3098#3099#0" expanded="true" />
+            <element signature="e#3159#3160#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/snw/structure/BufferData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+          <folding>
+            <element signature="e#1911#1912#0" expanded="true" />
+            <element signature="e#1956#1957#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/snw/engine/audio/AudioData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1773#1774#0" expanded="true" />
+            <element signature="e#1807#1808#0" expanded="true" />
+            <element signature="e#1843#1844#0" expanded="true" />
+            <element signature="e#1877#1878#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/snw/engine/core/Engine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="471" column="28" lean-forward="true" selection-start-line="471" selection-start-column="28" selection-end-line="471" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1274#1275#0" expanded="true" />
+            <element signature="e#1335#1336#0" expanded="true" />
+            <element signature="e#8987#8988#0" expanded="true" />
+            <element signature="e#9046#9047#0" expanded="true" />
+            <element signature="e#9244#9245#0" expanded="true" />
+            <element signature="e#9306#9307#0" expanded="true" />
+            <element signature="e#9717#9718#0" expanded="true" />
+            <element signature="e#9773#9774#0" expanded="true" />
+            <element signature="e#9955#9956#0" expanded="true" />
+            <element signature="e#10012#10013#0" expanded="true" />
+            <element signature="e#10074#10075#0" expanded="true" />
+            <element signature="e#10139#10140#0" expanded="true" />
+            <element signature="e#10314#10315#0" expanded="true" />
+            <element signature="e#10382#10383#0" expanded="true" />
+            <element signature="e#11932#11933#0" expanded="true" />
+            <element signature="e#11980#11981#0" expanded="true" />
+            <element signature="e#12338#12339#0" expanded="true" />
+            <element signature="e#12394#12395#0" expanded="true" />
+            <element signature="e#12455#12456#0" expanded="true" />
+            <element signature="e#12511#12512#0" expanded="true" />
+            <element signature="e#12791#12792#0" expanded="true" />
+            <element signature="e#12840#12841#0" expanded="true" />
+            <element signature="e#22028#22029#0" expanded="true" />
+            <element signature="e#22089#22090#0" expanded="true" />
+            <element signature="e#22292#22293#0" expanded="true" />
+            <element signature="e#22350#22351#0" expanded="true" />
+            <element signature="e#26480#26481#0" expanded="true" />
+            <element signature="e#26519#26520#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/snw/engine/audio/AudioManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
+          <folding>
+            <element signature="e#2485#2486#0" expanded="true" />
+            <element signature="e#2518#2519#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -880,7 +902,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

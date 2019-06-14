@@ -72,6 +72,14 @@ public class AudioManager {
         }
     }
 
+    public void storeBGM(String name, AudioData audio) {
+        Engine.storeAudio(name, audio);
+        if (!BGMList.contains(name)) {
+            audio.getClip().addLineListener(new BGMLineListener());
+            BGMList.add(name);
+        }
+    }
+
     public void storeBGM(String name) {
         AudioData audio = Engine.attainAudio(name);
         if (!BGMList.contains(name)) {
@@ -114,7 +122,7 @@ public class AudioManager {
 
         currentBGM = name;
 
-        clipBGM.setFramePosition(0);
+        //clipBGM.setFramePosition(0);
 
         if (loopTime > 0) {
             clipBGM.loop(loopTime - 1);

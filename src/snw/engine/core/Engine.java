@@ -336,6 +336,14 @@ public final class Engine {
         return b;
     }
 
+    public static AudioInputStream getStreamAbsolute(String name, String format) {
+        return getAudioBufferData().getStreamAbsolute(name, format);
+    }
+
+    public static AudioInputStream getStreamAbsolute(String name) {
+        return getAudioBufferData().getStreamAbsolute(name);
+    }
+
     public static AudioInputStream getStream(String name, String format) {
         return getAudioBufferData().getStream(name, format);
     }
@@ -454,6 +462,10 @@ public final class Engine {
 
     public static void storeBGM(String name, String format) {
         getAudioManager().storeBGM(name, format);
+    }
+
+    public static void storeBGM(String name, AudioData audio) {
+        getAudioManager().storeBGM(name, audio);
     }
 
     public static void playBGM(String name) {

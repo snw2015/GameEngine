@@ -17,6 +17,7 @@ public class AudioData {
 
     public AudioData(AudioInputStream stream) {
         this.stream = stream;
+        hasPrepared = false;
     }
 
     /**

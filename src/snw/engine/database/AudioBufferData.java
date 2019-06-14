@@ -113,6 +113,14 @@ public class AudioBufferData extends BufferData<AudioData> {
         return getStream(name, Engine.getProperty("default_audio_format"));
     }
 
+    public AudioInputStream getStreamAbsolute(String nameAbsolute, String format) {
+        return getDecoder(format).decode(nameAbsolute);
+    }
+
+    public AudioInputStream getStreamAbsolute(String nameAbsolute) {
+        return getStreamAbsolute(nameAbsolute, Engine.getProperty("default_audio_format"));
+    }
+
     public AudioData load(String name, String format) {
         return new AudioData(getStream(name, format));
     }
