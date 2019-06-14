@@ -76,9 +76,9 @@ public class Button extends FrameComponent {
     }
 
     @Override
-    public void mouseClicked(int mouseX, int mouseY) {
+    public void mouseClicked(double mouseX, double mouseY) {
         if (reactionClicked != null) {
-            reactionClicked.react(new VectorInt(mouseX, mouseY));
+            reactionClicked.react(new VectorInt((int)mouseX, (int)mouseY));
         }
     }
 

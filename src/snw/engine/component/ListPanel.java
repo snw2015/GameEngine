@@ -187,7 +187,7 @@ public class ListPanel extends FrameComponent {
     }
 
     @Override
-    public boolean mouseMoved(int mouseX, int mouseY) {
+    public boolean mouseMoved(double mouseX, double mouseY) {
         boolean b = super.mouseMoved(mouseX, mouseY);
         resetEffect();
         return (b);

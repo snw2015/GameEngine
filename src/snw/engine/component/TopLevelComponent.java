@@ -58,25 +58,25 @@ public class TopLevelComponent extends FrameComponent {
     }
 
     @Override
-    public boolean mouseMoved(int mouseX, int mouseY) {
+    public boolean mouseMoved(double mouseX, double mouseY) {
         if (hasCursor) {
-            cursor.setPos(mouseX, mouseY);
+            cursor.setPos((int)mouseX, (int)mouseY);
         }
 
         return (super.mouseMoved(mouseX, mouseY));
     }
 
     @Override
-    public void mouseDragged(int mouseX, int mouseY) {
+    public void mouseDragged(double mouseX, double mouseY) {
         if (hasCursor) {
-            cursor.setPos(mouseX, mouseY);
+            cursor.setPos((int)mouseX, (int)mouseY);
             setState(STATE_DRAG);
         }
         super.mouseDragged(mouseX, mouseY);
     }
 
     @Override
-    public void mouseReleased(int mouseX, int mouseY) {
+    public void mouseReleased(double mouseX, double mouseY) {
         if (hasCursor) {
             setState(STATE_NORMAL);
         }

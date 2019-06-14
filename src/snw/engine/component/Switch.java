@@ -101,7 +101,7 @@ public class Switch extends FrameComponent {
     }
 
     @Override
-    public void mouseClicked(int mouseX, int mouseY) {
+    public void mouseClicked(double mouseX, double mouseY) {
         if (mouseX < getWidth() / 2) {
             switchOn();
         } else {

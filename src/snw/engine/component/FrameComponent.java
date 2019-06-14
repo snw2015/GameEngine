@@ -2,6 +2,7 @@ package snw.engine.component;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import snw.engine.animation.AnimationData;
 import snw.math.VectorDbl;
@@ -230,8 +231,9 @@ public class FrameComponent extends Component {
     public void mouseClicked(double mouseX, double mouseY) {
         refocusMouse();
         if (componentFocus != null) {
-            Component sub = componentFocus;
-            sub.mouseClicked(mouseX - sub.getAlignedX(), mouseY - sub.getAlignedY());
+            VectorDbl mousePos = componentFocus.getInverseTransformedPos(
+                    mouseX, mouseY);
+            componentFocus.mouseClicked(mousePos.x, mousePos.y);
         }
     }
 
@@ -239,8 +241,9 @@ public class FrameComponent extends Component {
     public void mousePressed(double mouseX, double mouseY) {
         refocusMouse();
         if (componentFocus != null) {
-            Component sub = componentFocus;
-            sub.mousePressed(mouseX - sub.getAlignedX(), mouseY - sub.getAlignedY());
+            VectorDbl mousePos = componentFocus.getInverseTransformedPos(
+                    mouseX, mouseY);
+            componentFocus.mousePressed(mousePos.x, mousePos.y);
         }
     }
 
@@ -248,13 +251,15 @@ public class FrameComponent extends Component {
     public void mouseReleased(double mouseX, double mouseY) {
         refocusMouse();
         if (componentFocus != null) {
-            Component sub = componentFocus;
-            sub.mouseReleased(mouseX - sub.getAlignedX(), mouseY - sub.getAlignedY());
+            VectorDbl mousePos = componentFocus.getInverseTransformedPos(
+                    mouseX, mouseY);
+            componentFocus.mouseReleased(mousePos.x, mousePos.y);
         }
     }
 
     @Override
     public boolean mouseMoved(double mouseX, double mouseY) {
+        //println(name + " moved");
         this.mouseX = mouseX;
         this.mouseY = mouseY;
         return refocusMouse();
@@ -268,21 +273,23 @@ public class FrameComponent extends Component {
             sub = subComponents.get(i);
             //println(sub + ": " + sub.getClip().contains(mouseX, mouseY));
             if (sub != null && sub.isFocusable() && sub.getClip().contains(mouseX, mouseY)) {
-                boolean changed = componentFocus != sub;
-                if (changed) {
-                    //println("changed! ", componentFocus + "->" + sub);
-                    if (componentFocus != null) {
-                        componentFocus.mouseExited();
+                if (sub.isInner(mouseX, mouseY)) {
+                    boolean changed = componentFocus != sub;
+                    if (changed) {
+                        //println("changed! ", componentFocus + "->" + sub);
+                        if (componentFocus != null) {
+                            componentFocus.mouseExited();
+                        }
+                        sub.mouseEntered();
+                        componentFocus = sub;
                     }
-                    sub.mouseEntered();
-                    componentFocus = sub;
+
+                    VectorDbl mousePos = sub.getInverseTransformedPos(
+                            mouseX, mouseY);
+                    sub.mouseMoved(mousePos.x, mousePos.y);
+
+                    return (changed);
                 }
-
-                VectorDbl mousePos = sub.getInverseTransformedPos(
-                        mouseX - sub.getAlignedX(), mouseY - sub.getAlignedY());
-                sub.mouseMoved(mousePos.x, mousePos.y);
-
-                return (changed);
             }
         }
         if (componentFocus != null) {
@@ -307,8 +314,10 @@ public class FrameComponent extends Component {
     @Override
     public void mouseDragged(double mouseX, double mouseY) {
         if (componentFocus != null) {
-            componentFocus.mouseDragged(mouseX - componentFocus.getAlignedX(),
-                    mouseY - componentFocus.getAlignedY());
+            VectorDbl mousePos = componentFocus.getInverseTransformedPos(
+                    mouseX, mouseY);
+            componentFocus.mouseDragged(mousePos.x,
+                    mousePos.y);
             super.mouseDragged(mouseX, mouseY);
         }
     }

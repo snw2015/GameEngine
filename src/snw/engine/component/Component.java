@@ -9,6 +9,8 @@ import java.util.List;
 
 import snw.engine.animation.Animation;
 import snw.engine.animation.AnimationData;
+import snw.engine.component.bounding.BoundChecker;
+import snw.engine.component.bounding.RectangleBoundChecker;
 import snw.engine.component.event.FrameEvent;
 import snw.engine.core.Engine;
 import snw.engine.debug.Logger;
@@ -32,6 +34,10 @@ public abstract class Component {
 
     private AnimationData animationData;
     private Animation animation;
+    private AnimationData finalAnimationData = null;
+    private boolean finalAnimationDataUpToDate = false;
+
+    private BoundChecker boundChecker = new RectangleBoundChecker(this);
 
     public static final int ALIGNMENT_LEFTTOP = 0;
     public static final int ALIGNMENT_LEFTBOT = 1;
@@ -137,19 +143,33 @@ public abstract class Component {
         eventList.clear();
     }
 
-    public AnimationData getFinalAnimationData() {
-        AnimationData finalData = new AnimationData(AffineTransform.getTranslateInstance(getAlignedX(), getAlignedY()));
-        finalData.setAlphaFloat(alpha);
-        if (animationData != null) {
-            finalData.transform(animationData);
-        }
+    public void renderUpdateInform() {
+        finalAnimationDataUpToDate = false;
+    }
 
-        return finalData;
+    public AnimationData getFinalAnimationData() {
+        if(!finalAnimationDataUpToDate) {
+            //println(name + " changed");
+            setupFinalAnimationData();
+        }
+        return finalAnimationData;
+    }
+
+    public void setupFinalAnimationData() {
+        finalAnimationData = new AnimationData(AffineTransform.getTranslateInstance(getAlignedX(), getAlignedY()));
+        //System.out.println(name + ": " + getAlignedX() + ", " + getAlignedY());
+        //System.out.println(finalAnimationData);
+        finalAnimationData.setAlphaFloat(alpha);
+        if (animationData != null) {
+            finalAnimationData.transform(animationData);
+        }
+        finalAnimationDataUpToDate = true;
     }
 
     public void updateAnimation() {
         if (animated && animation != null) {
             animationData = animation.getNextFrame();
+            renderUpdateInform();
         }
     }
 
@@ -240,6 +260,7 @@ public abstract class Component {
 
     public void setX(int x) {
         this.x = x;
+        renderUpdateInform();
     }
 
     public int getY() {
@@ -252,6 +273,7 @@ public abstract class Component {
 
     public void setY(int y) {
         this.y = y;
+        renderUpdateInform();
     }
 
     public VectorInt getPos() {
@@ -285,11 +307,38 @@ public abstract class Component {
                 animated = false;
             }
         }
+
+        renderUpdateInform();
     }
 
     public void setAnimation(Animation animation, boolean isLoop) {
         setAnimation(animation);
         animation.setLoop(isLoop);
+    }
+
+    public void setBoundChecker(BoundChecker boundChecker) {
+        this.boundChecker = boundChecker;
+    }
+
+    public boolean isInner(double x, double y) {
+        //println("Checking Component [" + name + "]:");
+        //println("\t" + x + ", " + y);
+        AnimationData data = getFinalAnimationData();
+        //println(data);
+        double[] newPoints = new double[2];
+        double[] originalPoints = new double[]{x, y};
+        try {
+            data.getTransformation().inverseTransform(originalPoints, 0, newPoints, 0, 1);
+        } catch (NoninvertibleTransformException e) {
+            e.printStackTrace();
+        }
+        //println("\t" + x + ", " + y);
+
+        return boundChecker.isInBound(newPoints[0], newPoints[1]);
+    }
+
+    public Rectangle getUnalignedBound() {
+        return new Rectangle(0, 0, getWidth(), getHeight());
     }
 
     public Shape getClip() {
@@ -361,21 +410,21 @@ public abstract class Component {
         return boundClip;
     }
 
-    public VectorInt getTransformedPos(int x, int y) {
-        if (animationData == null) return new VectorInt(x, y);
+    public VectorDbl getTransformedPos(double x, double y) {
         double[] newPoint = new double[2];
-        animationData.getTransformation().transform(new double[]{x, y}, 0, newPoint, 0, 1);
-        return new VectorInt((int) newPoint[0], (int) newPoint[1]);
+        getFinalAnimationData().getTransformation().transform(new double[]{x, y}, 0, newPoint, 0, 1);
+        return new VectorDbl(newPoint[0], newPoint[1]);
     }
 
     public VectorDbl getInverseTransformedPos(double x, double y) {
-        if (animationData == null) return new VectorDbl(x, y);
         double[] newPoint = new double[2];
         try {
-            animationData.getTransformation().inverseTransform(new double[]{x, y}, 0, newPoint, 0, 1);
+            getFinalAnimationData().getTransformation().
+                    inverseTransform(new double[]{x, y}, 0, newPoint, 0, 1);
         } catch (NoninvertibleTransformException e) {
             e.printStackTrace();
         }
+
         return new VectorDbl(newPoint[0], newPoint[1]);
     }
 
@@ -442,6 +491,7 @@ public abstract class Component {
 
     public void setAlignment(int alignment) {
         this.alignment = alignment;
+        renderUpdateInform();
     }
 
     public boolean isVisible() {
@@ -479,6 +529,7 @@ public abstract class Component {
 
     public void setTransform(AffineTransform affineTransform) {
         animationData = new AnimationData(affineTransform);
+        renderUpdateInform();
     }
 
     public float getAlpha() {
@@ -487,11 +538,12 @@ public abstract class Component {
 
     public void setAlpha(float alpha) {
         this.alpha = alpha;
+        renderUpdateInform();
     }
 
     public void move(int x, int y) {
-        this.x += x;
-        this.y += y;
+        setX(getX() + x);
+        setY(getY() + y);
     }
 
     public class MoveEvent implements FrameEvent {

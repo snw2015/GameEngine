@@ -2,11 +2,13 @@ package test;
 
 import snw.engine.component.Button;
 import snw.engine.component.Graphic;
+import snw.engine.component.bounding.CircleBoundChecker;
 import snw.engine.component.demo.NormalPanel;
 import snw.engine.core.Engine;
 import snw.engine.game.GameState;
 
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
 import java.util.Random;
 
 public class TestFrame extends NormalPanel {
@@ -18,7 +20,9 @@ public class TestFrame extends NormalPanel {
         setBackground(Color.blue);
 
         b = new Button("b1", 100, 100,
-                new Graphic("g1", Color.pink, new Rectangle(100, 100), 0, 0));
+                new Graphic("g1", Color.pink, new Ellipse2D.Double(0,0,100,100), 0, 0));
+        b.setAlignment(ALIGNMENT_CENTER);
+        b.setBoundChecker(new CircleBoundChecker(b, 50));
 
         b.setReactionClicked(e -> {
             setBackground(Color.getHSBColor(random.nextFloat(), 1, 1));
@@ -32,29 +36,30 @@ public class TestFrame extends NormalPanel {
     private boolean draggingB = false;
 
     @Override
-    public void mousePressed(int x, int y) {
+    public void mousePressed(double x, double y) {
         super.mousePressed(x, y);
         if (componentFocus == b) {
+            println("dragging start");
             draggingB = true;
-            lastDragX = x;
-            lastDragY = y;
+            lastDragX = (int)x;
+            lastDragY = (int)y;
         }
     }
 
     @Override
-    public void mouseDragged(int x, int y) {
+    public void mouseDragged(double x, double y) {
         super.mouseDragged(x, y);
 
         if (draggingB) {
-            b.move(x - lastDragX, y - lastDragY);
+            b.move((int)x - lastDragX, (int)y - lastDragY);
 
-            lastDragX = x;
-            lastDragY = y;
+            lastDragX = (int)x;
+            lastDragY = (int)y;
         }
     }
 
     @Override
-    public void mouseReleased(int x, int y) {
+    public void mouseReleased(double x, double y) {
         super.mouseReleased(x, y);
 
         if(draggingB) {

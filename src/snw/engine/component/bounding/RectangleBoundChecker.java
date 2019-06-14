@@ -11,6 +11,6 @@ public class RectangleBoundChecker implements BoundChecker {
 
     @Override
     public boolean isInBound(double x, double y) {
-        return self.getBound().contains(x, y);
+        return self.getUnalignedBound().contains(x, y);
     }
 }
