@@ -103,17 +103,10 @@ public class VectorInt {
         return minus(other).getNorm2();
     }
 
-    public static VectorInt getRandom(int rangeX, int rangeY) {
-        Random rnd = new Random();
-        return getRandom(rangeX, rangeY, rnd);
-    }
+
 
     public VectorInt scale(double num) {
         return new VectorInt((int) (x * num), (int) (y * num));
-    }
-
-    public static VectorInt getRandom(int rangeX, int rangeY, Random rnd) {
-        return new VectorInt(rnd.nextInt(rangeX), rnd.nextInt(rangeY));
     }
 
     public void translate(int deltaX, int deltaY) {
@@ -164,6 +157,24 @@ public class VectorInt {
         }
 
         return new Rectangle(x, y, width, height);
+    }
+
+    public static VectorInt getRandom() {
+        Random rnd = new Random();
+        return new VectorInt(rnd.nextInt(), rnd.nextInt());
+    }
+
+    public static VectorInt getRandom(Random rnd) {
+        return new VectorInt(rnd.nextInt(), rnd.nextInt());
+    }
+
+    public static VectorInt getRandom(int rangeX, int rangeY) {
+        Random rnd = new Random();
+        return getRandom(rangeX, rangeY, rnd);
+    }
+
+    public static VectorInt getRandom(int rangeX, int rangeY, Random rnd) {
+        return new VectorInt(rnd.nextInt(rangeX), rnd.nextInt(rangeY));
     }
 
     @Override
